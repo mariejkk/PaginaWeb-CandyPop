@@ -1,1 +1,2 @@
-# PaginaWeb---CandyPop
+# CandyPop
+###Este proyecto consiste en el desarrollo de una página web informativa para el negocio de mis padres, dedicado a la venta de dulces y salados, así como al alquiler de juegos inflables para eventos y celebraciones. La página tendrá como objetivo principal presentar el negocio de manera clara, sencilla y atractiva, mostrando los productos y servicios disponibles, con el fin de facilitar que los clientes conozcan lo que ofrecemos y puedan contactarnos fácilmente.
