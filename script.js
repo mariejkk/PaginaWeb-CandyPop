@@ -1,4 +1,3 @@
-// ==================== MENÚ HAMBURGUESA ====================
 
 const hamburgerBtn = document.getElementById('hamburgerBtn');
 const navMenu = document.getElementById('navMenu');
@@ -11,7 +10,6 @@ hamburgerBtn.addEventListener('click', () => {
     hamburgerBtn.setAttribute('aria-expanded', isOpen);
 });
 
-// Cierra el menú al hacer clic en un link (para que no quede abierto al navegar)
 document.querySelectorAll('.nav-menu a').forEach(link => {
     link.addEventListener('click', () => {
         hamburgerBtn.classList.remove('active');
@@ -27,7 +25,6 @@ const flechaIzq = document.getElementById('flechaIzq');
 const flechaDer = document.getElementById('flechaDer');
 
 if (carruselTrack && flechaIzq && flechaDer) {
-    // Cuánto se mueve por clic: el ancho de una tarjeta + el gap
     const getScrollAmount = () => {
         const item = carruselTrack.querySelector('.carrusel-item');
         return item ? item.offsetWidth + 24 : 300;
@@ -50,11 +47,11 @@ const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            revealObserver.unobserve(entry.target); // solo se anima una vez
+            revealObserver.unobserve(entry.target); 
         }
     });
 }, {
-    threshold: 0.2 // se activa cuando el 20% del elemento es visible
+    threshold: 0.2
 });
  
 revealElements.forEach(el => revealObserver.observe(el));
@@ -68,9 +65,8 @@ const cerrarGaleria = document.getElementById('cerrarGaleria');
  
 function abrirPanelGaleria() {
     galeriaPanel.classList.add('active');
-    document.body.style.overflow = 'hidden'; // bloquea el scroll del fondo
+    document.body.style.overflow = 'hidden';
  
-    // cierra el menú hamburguesa si estaba abierto
     hamburgerBtn.classList.remove('active');
     navMenu.classList.remove('active');
 }
@@ -101,7 +97,7 @@ const galeriaItems = document.querySelectorAll('.galeria-item');
  
 filtroBotones.forEach(boton => {
     boton.addEventListener('click', () => {
-        // Marca el botón activo
+
         filtroBotones.forEach(b => b.classList.remove('active'));
         boton.classList.add('active');
  
