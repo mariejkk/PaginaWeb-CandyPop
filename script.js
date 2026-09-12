@@ -18,28 +18,34 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
     });
 });
 
-// ==================== CARRUSEL DE FAVORITOS ====================
-
-const carruselTrack = document.getElementById('carruselTrack');
-const flechaIzq = document.getElementById('flechaIzq');
-const flechaDer = document.getElementById('flechaDer');
-
-if (carruselTrack && flechaIzq && flechaDer) {
+//  CARRUSELES (Favoritos y Combos) 
+ 
+function activarCarrusel(trackId, flechaIzqId, flechaDerId) {
+    const track = document.getElementById(trackId);
+    const flechaIzq = document.getElementById(flechaIzqId);
+    const flechaDer = document.getElementById(flechaDerId);
+ 
+    if (!track || !flechaIzq || !flechaDer) return;
+ 
     const getScrollAmount = () => {
-        const item = carruselTrack.querySelector('.carrusel-item');
+        const item = track.querySelector('.carrusel-item');
         return item ? item.offsetWidth + 24 : 300;
     };
-
+ 
     flechaDer.addEventListener('click', () => {
-        carruselTrack.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+        track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
     });
-
+ 
     flechaIzq.addEventListener('click', () => {
-        carruselTrack.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+        track.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
     });
 }
+ 
+ 
+activarCarrusel('carruselTrack', 'flechaIzq', 'flechaDer');
+activarCarrusel('comboTrack', 'flechaComboIzq', 'flechaComboDer');
 
-// ==================== SCROLL REVEAL (aparecer al bajar) ====================
+//  SCROLL REVEAL (aparecer al bajar) 
  
 const revealElements = document.querySelectorAll('.reveal');
  
@@ -57,7 +63,7 @@ const revealObserver = new IntersectionObserver((entries) => {
 revealElements.forEach(el => revealObserver.observe(el));
  
  
-// ==================== GALERÍA: ABRIR / CERRAR PANEL ====================
+// GALERÍA: ABRIR / CERRAR PANEL
  
 const galeriaPanel = document.getElementById('galeriaPanel');
 const abrirGaleria = document.getElementById('abrirGaleria');
@@ -84,13 +90,12 @@ if (abrirGaleria && galeriaPanel) {
  
     cerrarGaleria.addEventListener('click', cerrarPanelGaleria);
  
-    // cierra con la tecla Escape
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') cerrarPanelGaleria();
     });
 }
  
-// ==================== GALERÍA: FILTROS POR CATEGORÍA ====================
+// GALERÍA: FILTROS POR CATEGORÍA 
  
 const filtroBotones = document.querySelectorAll('.filtro-btn');
 const galeriaItems = document.querySelectorAll('.galeria-item');

@@ -2,187 +2,326 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Candy Pop | Dulce y Salado</title>
- 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
- 
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description"
+		content="Candy Pop ofrece dulces, salados, bebidas, palomitas y paquetes para cumpleaños en Santo Domingo Este.">
+	<meta name="robots" content="index, follow">
+	<title>Candy Pop | Dulces y Salados</title>
+
+	<link rel="icon" type="image/png" href="images/Logo.png">
+	<link rel="canonical" href="https://candypopdulcesysalados.com/">
+
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Candy Pop | Dulces y Salados">
+	<meta property="og:description"
+		content="Dulces, salados, bebidas, palomitas y paquetes para cumpleaños en Santo Domingo Este.">
+	<meta property="og:image" content="images/Portada.jpeg">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="preload" as="image" href="images/Portada.jpeg">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+	<link rel="stylesheet" href="style.css">
+	<script src="script.js" defer></script>
 </head>
 
 <body>
 
-    <!-- ================= HEADER ================= -->
-    <header class="header">
-        <div class="container header-container">
-            <div class="logo">
-                <img src="images/logo.png" alt="Candy Pop Logo">
-            </div>
+	<!--  HEADER  -->
+	<header class="header">
+		<div class="container header-container">
+			<a href="/" class="logo" aria-label="Candy Pop - Inicio">
+				<img src="images/Logo.png" alt="Candy Pop">
+			</a>
 
-           <nav class="nav-menu" id="navMenu">
-                <a href="#favoritos">Productos</a>
-                <a href="#paquetes">Cumpleaños</a>
-                <a href="#" id="abrirGaleria">Galería</a>
-                <a href="#contacto">Contacto</a>
-            </nav>
+			<nav class="nav-menu" id="navMenu">
+				<a href="#favoritos">Productos</a>
+				<a href="#paquetes">Cumpleaños</a>
+				<a href="#" id="abrirGaleria">Galería</a>
+				<a href="#contacto">Contacto</a>
+			</nav>
 
-            <div class="header-btn">
-                <a href="https://wa.me/18094868433?text=Hola,%20me%20gustaria%20realizar%20un%20pedido"
-                   target="_blank" class="btn-whatsapp">
-                    Pedir por WhatsApp
-                </a>
-            </div>
+			<div class="header-btn">
+				<a href="https://wa.me/18094868433?text=Hola,%20me%20gustaria%20realizar%20un%20pedido" target="_blank"
+					rel="noopener noreferrer" class="btn-whatsapp">
+					Pedir por WhatsApp
+				</a>
+			</div>
 
-            <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </header>
+			<button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú" aria-expanded="false">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+		</div>
+	</header>
 
-    <!-- ================= MAIN ================= -->
-    <main>
+	<!-- MAIN  -->
+	<main>
 
-        <!-- HERO SECTION -->
-        <section class="hero">
-            <div class="hero-overlay">
-                <div class="container hero-content">
-                    <p class="subtitulo-hero">Desde Santo Domingo Este para ti</p>
-                    <h1>Entre lo <span class="texto-amarillo">dulce</span> y lo <span class="texto-amarillo">salado</span> está el gusto de la vida.</h1>
+		<!-- HERO SECTION -->
+		<section class="hero">
+			<div class="hero-overlay">
+				<div class="container hero-content">
+					<p class="subtitulo-hero">Desde Santo Domingo Este para ti</p>
+					<h1>Entre lo <span class="texto-amarillo">dulce</span> y lo <span
+							class="texto-amarillo">salado</span> está el gusto de la vida.</h1>
 
-                    <div class="hero-buttons">
-                        <a href="#productos" class="btn btn-primary">Conoce nuestro menú</a>
-                        <a href="#paquetes" class="btn btn-secondary">Paquetes de cumpleaños</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+					<div class="hero-buttons">
+						<a href="#favoritos" class="btn btn-primary">Conoce nuestro menú</a>
+						<a href="#paquetes" class="btn btn-secondary">Paquetes de cumpleaños</a>
+					</div>
+				</div>
+			</div>
+		</section>
 
-        <!-- FAVORITOS SECTION -->
-        <section id="favoritos" class="favoritos">
-            <div class="container">
-                <h2 class="favoritos-titulo reveal">Los favoritos de <span class="texto-amarillo">Candy Pop</span></h2>
-            </div>
+		<!-- FAVORITOS SECTION -->
+		<section id="favoritos" class="favoritos">
+			<div class="container">
+				<h2 class="favoritos-titulo reveal">Los favoritos de <span class="texto-amarillo">Candy Pop</span>
+				</h2>
+			</div>
 
-            <div class="carrusel-wrapper reveal">
-                <button class="carrusel-flecha carrusel-flecha-izq" id="flechaIzq" aria-label="Anterior">
-                    &#10094;
-                </button>
+			<div class="carrusel-wrapper reveal">
+				<button class="carrusel-flecha carrusel-flecha-izq" id="flechaIzq" aria-label="Anterior">
+					&#10094;
+				</button>
 
-                <div class="carrusel-track" id="carruselTrack">
-                    <div class="carrusel-item">
-                        <img src="images/favoritos/favorito6.jpeg" alt="Postre Candy Pop">
-                    </div>
-                    <div class="carrusel-item">
-                        <img src="images/favoritos/favorito7.jpeg" alt="Postre Candy Pop">
-                    </div>
-                </div>
+				<div class="carrusel-track" id="carruselTrack">
+					<div class="carrusel-item">
+						<img src="images/favoritos/palomitas1.jpeg" alt="palomitas de caramelo" loading="lazy">
+					</div>
+					<div class="carrusel-item">
+						<img src="images/favoritos/palomitas2.jpeg" alt="palomitas de Tajin" loading="lazy">
+					</div>
+					<div class="carrusel-item">
+						<img src="images/favoritos/palomitas3.jpeg" alt="palomitas tradicionales" loading="lazy">
+					</div>
+					<div class="carrusel-item">
+						<img src="images/favoritos/palomitas4.jpeg" alt="palomitas de chicharron" loading="lazy">
+					</div>
+					<div class="carrusel-item">
+						<img src="images/favoritos/chocoflan.jpeg" alt="ChocoFlan" loading="lazy">
+					</div>
+					<div class="carrusel-item">
+						<img src="images/favoritos/Jugosnat.jpeg" alt="Jugos naturales" loading="lazy">
+					</div>
+					<div class="carrusel-item">
+						<img src="images/favoritos/yunyun.jpeg" alt="yunyun" loading="lazy">
+					</div>
+				</div>
 
-                <button class="carrusel-flecha carrusel-flecha-der" id="flechaDer" aria-label="Siguiente">
-                    &#10095;
-                </button>
-            </div>
-        </section>
 
-    <!-- PAQUETES DE CUMPLEAÑOS -->
-        <section id="paquetes" class="paquetes">
-            <div class="container paquetes-content reveal">
-                <div class="paquetes-texto">
-                    <p class="paquetes-eyebrow">Celebra con nosotros</p>
-                    <h2>Paquetes de <span class="texto-amarillo">cumpleaños</span></h2>
-                    <p class="paquetes-descripcion">
-                        Todo lo que necesitas para disfrutar de un cumpleaños: palomitas, algodón de azúcar, hot dogs, bizcocho y mucho más. Tú disfruta la fiesta, nosotros nos encargamos del resto.
-                    </p>
-                    <a href="https://wa.me/18094868433?text=Hola,%20quiero%20info%20de%20los%20paquetes%20de%20cumplea%C3%B1os"
-                       target="_blank" class="btn btn-primary">
-                        Quiero un paquete de cumpleaños
-                    </a>
-                </div>
- 
-                <img src="images/paquetes/paquetescump.png" alt="Paquetes de cumpleaños Candy Pop" class="paquetes-poster">
-            </div>
-        </section>
+				<button class="carrusel-flecha carrusel-flecha-der" id="flechaDer" aria-label="Siguiente">
+					&#10095;
+				</button>
+			</div>
+		</section>
 
-         <!-- ================= GALERÍA (PANEL / TAB) ================= -->
-    <div id="galeriaPanel" class="galeria-panel">
-        <div class="galeria-panel-header">
-            <h2>Nuestra Galeria de <span class="texto-amarillo">Productos</span></h2>
-            <button id="cerrarGaleria" class="cerrar-galeria" aria-label="Cerrar galería">&times;</button>
-        </div>
- 
-        <div class="container">
-            <div class="galeria-filtros">
-                <button class="filtro-btn active" data-filtro="todos">Todos</button>
-                <button class="filtro-btn" data-filtro="salados">Salados</button>
-                <button class="filtro-btn" data-filtro="dulces">Dulces</button>
-                <button class="filtro-btn" data-filtro="bebidas">Bebidas</button>
-            </div>
- 
-            <!-- ================= dulces ================= -->
-            <div class="galeria-grid" id="galeriaGrid">
-                <div class="galeria-item" data-categoria="dulces">
-                    <img src="images/galeria/dulces/bizcochos.jpeg" alt="bizcochos">
-                </div>
-                <div class="galeria-item" data-categoria="dulces">
-                    <img src="images/galeria/dulces/bizcocho2.jpeg" alt=/bizcocho2">
-                </div>
-                <div class="galeria-item" data-categoria="dulces">
-                    <img src="images/galeria/dulces/brownie.jpeg" alt="brownie">
-                </div>
-                <div class="galeria-item" data-categoria="dulces">
-                    <img src="images/galeria/dulces/flan.jpeg" alt="flan">
-                </div>
-                <div class="galeria-item" data-categoria="dulces">
-                    <img src="images/galeria/dulces/fresacrema.jpeg" alt="fresa con crema">
-                </div>
-                <div class="galeria-item" data-categoria="dulces">
-                    <img src="images/galeria/dulces/favorito7.jpeg" alt="Postre dulce Candy Pop">
-                </div>
-                <div class="galeria-item" data-categoria="dulces">
-                    <img src="images/galeria/dulces/favorito6.jpeg" alt="Postre dulce Candy Pop">
-                </div>
-                <div class="galeria-item" data-categoria="dulces">
-                    <img src="images/galeria/dulces/mousse.jpeg" alt="mousse de oreo">
-                </div>
-                <div class="galeria-item" data-categoria="dulces">
-                    <img src="images/galeria/dulces/gelatina.jpeg" alt="gelatinas">
-                </div>
+		<!-- COMBOS SECTION -->
+		<section id="combos" class="combos">
+			<div class="container">
+				<h2 class="combos-titulo reveal">Nuestros <span class="texto-amarillo">Combos</span></h2>
+			</div>
 
-            <!-- ================= salados ================= -->
-                <div class="galeria-item" data-categoria="salados">
-                    <img src="images/galeria/salados/sandwich.jpeg" alt="sandwich">
-                </div>
-               
-             <!-- ================= bebidas ================= -->
-                <div class="galeria-item" data-categoria="bebidas">
-                    <img src="images/galeria/bebidas/yunyun.jpeg" alt="yunyun">
-                </div>
-            </div>
-        </div>
-    </div>
- 
-         <!-- ================= Footer ================= -->
-    
-   <footer id="contacto" class="footer">
-        <div class="container footer-content">
-            <div class="footer-logo">
-                <img src="images/logo.png" alt="Candy Pop Logo">
-            </div>
- 
-            <div class="footer-info">
-                <a href="https://wa.me/18094868433" target="_blank"><i class="fa-brands fa-whatsapp"></i> 809-486-8433</a>
-                <a href="https://www.google.com/maps/search/?api=1&query=Calle+Trinitaria+esquina+Calle+Fanete+Santo+Domingo+Este" target="_blank"><i class="fa-solid fa-location-dot"></i> Calle Trinitaria esq. Fanete, Sto. Dgo. Este</a>
-                <a href="https://www.instagram.com/candypopdulcesysalados/" target="_blank"><i class="fa-brands fa-instagram"></i> @candypopdulcesysalados</a>
-            </div>
-        </div>
-    </footer>
+			<div class="carrusel-wrapper reveal">
+				<button class="carrusel-flecha carrusel-flecha-izq" id="flechaComboIzq" aria-label="Anterior">
+					&#10094;
+				</button>
+
+				<div class="carrusel-track" id="comboTrack">
+					<div class="carrusel-item combo-item">
+						<img src="images/combos/combo1.jpeg" alt="Combo1 Candy Pop" loading="lazy">
+					</div>
+					<div class="carrusel-item combo-item">
+						<img src="images/combos/combo2.jpeg" alt="Combo2 Candy Pop" loading="lazy">
+					</div>
+					<div class="carrusel-item combo-item">
+						<img src="images/combos/combo3.jpeg" alt="Combo3 Candy Pop" loading="lazy">
+					</div>
+					<div class="carrusel-item combo-item">
+						<img src="images/combos/combo4.jpeg" alt="Combo4 Candy Pop" loading="lazy">
+					</div>
+					<div class="carrusel-item combo-item">
+						<img src="images/combos/combo5.jpeg" alt="Combo5 Candy Pop" loading="lazy">
+					</div>
+					<div class="carrusel-item combo-item">
+						<img src="images/combos/combo6.jpeg" alt="Combo6 Candy Pop" loading="lazy">
+					</div>
+					<div class="carrusel-item combo-item">
+						<img src="images/combos/combo7.jpeg" alt="Combo7 Candy Pop" loading="lazy">
+					</div>
+					<div class="carrusel-item combo-item">
+						<img src="images/combos/combo8.jpeg" alt="Combo8 Candy Pop" loading="lazy">
+					</div>
+					<div class="carrusel-item combo-item">
+						<img src="images/combos/combo9.jpeg" alt="Combo9 Candy Pop" loading="lazy">
+					</div>
+					<div class="carrusel-item combo-item">
+						<img src="images/combos/combo10.jpeg" alt="Combo10 Candy Pop" loading="lazy">
+					</div>
+				</div>
+
+				<button class="carrusel-flecha carrusel-flecha-der" id="flechaComboDer" aria-label="Siguiente">
+					&#10095;
+				</button>
+			</div>
+		</section>
+
+
+		<!-- PAQUETES DE CUMPLEAÑOS -->
+		<section id="paquetes" class="paquetes">
+			<div class="container paquetes-content reveal">
+				<div class="paquetes-texto">
+					<p class="paquetes-eyebrow">Celebra con nosotros</p>
+					<h2>Paquetes de <span class="texto-amarillo">cumpleaños</span></h2>
+					<p class="paquetes-descripcion">
+						Todo lo que necesitas para disfrutar de un cumpleaños: palomitas, algodón de azúcar, hot
+						dogs, bizcocho y mucho más. Tú disfruta la fiesta, nosotros nos encargamos del resto.
+					</p>
+					<a href="https://wa.me/18094868433?text=Hola,%20quiero%20info%20de%20los%20paquetes%20de%20cumplea%C3%B1os"
+						target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+						Quiero un paquete de cumpleaños
+					</a>
+				</div>
+
+				<img src="images/paquetes/paquetescump.png" alt="Paquetes de cumpleaños Candy Pop"
+					class="paquetes-poster">
+			</div>
+		</section>
+
+		<!--  GALERÍA (PANEL)  -->
+		<div id="galeriaPanel" class="galeria-panel">
+			<div class="galeria-panel-header">
+				<h2>Nuestra Galeria de <span class="texto-amarillo">Productos</span></h2>
+				<button id="cerrarGaleria" class="cerrar-galeria" aria-label="Cerrar galería">&times;</button>
+			</div>
+
+			<div class="container">
+				<div class="galeria-filtros">
+					<button class="filtro-btn active" data-filtro="todos">Todos</button>
+					<button class="filtro-btn" data-filtro="salados">Salados</button>
+					<button class="filtro-btn" data-filtro="dulces">Dulces</button>
+					<button class="filtro-btn" data-filtro="bebidas">Bebidas</button>
+				</div>
+
+				<!-- dulces  -->
+				<div class="galeria-grid" id="galeriaGrid">
+					<div class="galeria-item" data-categoria="dulces">
+						<img src="images/galeria/dulces/bizcochos.jpeg" alt="Bizcochos artesanales de Candy Pop"
+							loading="lazy">
+					</div>
+					<div class="galeria-item" data-categoria="dulces">
+						<img src="images/galeria/dulces/brownie.jpeg" alt="Brownie de chocolate" loading="lazy">
+					</div>
+					<div class="galeria-item" data-categoria="dulces">
+						<img src="images/galeria/dulces/flan.jpeg" alt="Flan casero" loading="lazy">
+					</div>
+					<div class="galeria-item" data-categoria="dulces">
+						<img src="images/galeria/dulces/fresacrema.jpeg" alt="fresa con crema" loading="lazy">
+					</div>
+					<div class="galeria-item" data-categoria="dulces">
+						<img src="images/galeria/dulces/favorito7.jpeg" alt="Postre dulce Candy Pop" loading="lazy">
+					</div>
+					<div class="galeria-item" data-categoria="dulces">
+						<img src="images/galeria/dulces/favorito6.jpeg" alt="Postre dulce Candy Pop" loading="lazy">
+					</div>
+					<div class="galeria-item" data-categoria="dulces">
+						<img src="images/galeria/dulces/mousse.jpeg" alt="mousse de oreo" loading="lazy">
+					</div>
+					<div class="galeria-item" data-categoria="dulces">
+						<img src="images/galeria/dulces/moussefresa.jpeg" alt="mousse de fresa" loading="lazy">
+					</div>
+					<div class="galeria-item" data-categoria="dulces">
+						<img src="images/galeria/dulces/gelatina.jpeg" alt="gelatinas" loading="lazy">
+					</div>
+					<div class="galeria-item" data-categoria="dulces">
+						<img src="images/galeria/dulces/Bizcochococo.jpeg" alt="bizcocho de coco" loading="lazy">
+					</div>
+					<div class="galeria-item" data-categoria="dulces">
+						<img src="images/galeria/dulces/chocoflan.jpeg" alt="ChocoFlan" loading="lazy">
+					</div>
+					<div class="galeria-item" data-categoria="dulces">
+						<img src="images/galeria/dulces/obleas.jpeg" alt="obleas con dulce de leche" loading="lazy">
+					</div>
+					<div class="galeria-item" data-categoria="dulces">
+						<img src="images/galeria/dulces/bizcochovainilla.jpeg" alt="bizcocho de vainilla"
+							loading="lazy">
+					</div>
+					<div class="galeria-item" data-categoria="dulces">
+						<img src="images/galeria/dulces/palomitas1.jpeg" alt="palomitas de caramelo" loading="lazy">
+					</div>
+
+
+					<!-- salados-->
+					<div class="galeria-item" data-categoria="salados">
+						<img src="images/galeria/salados/sandwich.jpeg" alt="sandwich" loading="lazy">
+					</div>
+					<div class="galeria-item" data-categoria="salados">
+						<img src="images/galeria/salados/chicharron.jpeg" alt="chicharron" loading="lazy">
+					</div>
+					<div class="galeria-item" data-categoria="salados">
+						<img src="images/galeria/salados/Salchipan.jpeg" alt="Salchipan" loading="lazy">
+					</div>
+					<div class="galeria-item" data-categoria="salados">
+						<img src="images/galeria/salados/palomitas2.jpeg" alt="palomitas de Tajin" loading="lazy">
+					</div>
+					<div class="galeria-item" data-categoria="salados">
+						<img src="images/galeria/salados/palomitas3.jpeg" alt="palomitas tradicionales" loading="lazy">
+					</div>
+					<div class="galeria-item" data-categoria="salados">
+						<img src="images/galeria/salados/palomitas4.jpeg" alt="palomitas de chicharron" loading="lazy">
+					</div>
+					<div class="galeria-item" data-categoria="salados">
+						<img src="images/galeria/salados/pastelenhoja.jpeg" alt="Pasteles en hoja" loading="lazy">
+					</div>
+					<div class="galeria-item" data-categoria="salados">
+						<img src="images/galeria/salados/nachos.jpeg" alt="nachos con queso" loading="lazy">
+					</div>
+
+					<!--  bebidas -->
+					<div class="galeria-item" data-categoria="bebidas">
+						<img src="images/galeria/bebidas/yunyun.jpeg" alt="yunyun" loading="lazy">
+					</div>
+					<div class="galeria-item" data-categoria="bebidas">
+						<img src="images/galeria/bebidas/refrescos.jpeg" alt="refrescos" loading="lazy">
+					</div>
+					<div class="galeria-item" data-categoria="bebidas">
+						<img src="images/galeria/bebidas/cafe.jpeg" alt="vaso de cafe" loading="lazy">
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</main>
+
+	<!--  Footer  -->
+
+	<footer id="contacto" class="footer">
+		<div class="container footer-content">
+			<div class="footer-logo">
+				<img src="images/Logo.png" alt="Candy Pop Logo">
+			</div>
+
+			<div class="footer-info">
+				<a href="https://wa.me/18094868433" target="_blank" rel="noopener noreferrer"><i
+						class="fa-brands fa-whatsapp"></i>
+					809-486-8433</a>
+				<a href="https://www.google.com/maps/search/?api=1&query=Calle+Trinitaria+esquina+Calle+Fanete+Santo+Domingo+Este"
+					target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-location-dot"></i> Calle Trinitaria
+					esq. Fanete,
+					Sto. Dgo. Este</a>
+				<a href="https://www.instagram.com/candypopdulcesysalados/" target="_blank" rel="noopener noreferrer">
+					<i class="fa-brands fa-instagram"></i>
+					@candypopdulcesysalados</a>
+			</div>
+		</div>
+	</footer>
 </body>
- 
+
 </html>
- 
