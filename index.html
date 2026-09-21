@@ -177,7 +177,8 @@
 							<p>Suave, cremoso y con un toque tropical y refrescante.</p>
 							<div class="producto-footer">
 								<span class="precio">RD$175</span>
-								<button class="btn-agregar" onclick="agregarAlCarrito('Mousse de Chinola', 175)">+</button>
+								<button class="btn-agregar"
+									onclick="agregarAlCarrito('Mousse de Chinola', 175)">+</button>
 							</div>
 						</div>
 					</article>
@@ -281,7 +282,8 @@
 							<p>Dulces, duraderas y con un sabor irresistible.</p>
 							<div class="producto-footer">
 								<span class="precio">RD$100</span>
-								<button class="btn-agregar" onclick="agregarAlCarrito('paleta de caramelo', 100)">+</button>
+								<button class="btn-agregar"
+									onclick="agregarAlCarrito('paleta de caramelo', 100)">+</button>
 							</div>
 						</div>
 					</article>
@@ -373,14 +375,14 @@
 						</div>
 					</article>
 
-					<article class="producto-card" data-categoria="salados" data-producto="Pastel en hoja">
+					<article class="producto-card" data-categoria="salados">
 						<img src="images/galeria/salados/pastelenhoja.jpeg" alt="Pastel en hoja" loading="lazy">
 						<div class="producto-info">
 							<h3>Pastel en hoja</h3>
 							<p>Pastelito relleno, envuelto y horneado en hoja.</p>
 							<div class="producto-footer">
 								<span class="precio">Desde RD$150</span>
-								<button class="btn-agregar btn-abrir-modal" type="button">+</button>
+								<button class="btn-agregar" onclick="abrirModalOpciones('Pastel en hoja')">+</button>
 							</div>
 						</div>
 					</article>
@@ -395,7 +397,7 @@
 							<div class="producto-footer">
 								<span class="precio">Desde RD$200</span>
 								<button class="btn-agregar"
-									onclick="abrirModalVasos('Palomitas de caramelo')">+</button>
+									onclick="abrirModalOpciones('Palomitas de caramelo')">+</button>
 							</div>
 						</div>
 					</article>
@@ -409,7 +411,7 @@
 							<div class="producto-footer">
 								<span class="precio">Desde RD$200</span>
 								<button class="btn-agregar"
-									onclick="abrirModalVasos('Palomitas de queso, tajín y limón')">+</button>
+									onclick="abrirModalOpciones('Palomitas de queso, tajín y limón')">+</button>
 							</div>
 						</div>
 					</article>
@@ -421,7 +423,7 @@
 							<p>Simples, clásicas y deliciosas.</p>
 							<div class="producto-footer">
 								<span class="precio">Desde RD$200</span>
-								<button class="btn-agregar" onclick="abrirModalVasos('Palomitas blancas')">+</button>
+								<button class="btn-agregar" onclick="abrirModalOpciones('Palomitas blancas')">+</button>
 							</div>
 						</div>
 					</article>
@@ -435,7 +437,7 @@
 							<div class="producto-footer">
 								<span class="precio">Desde RD$200</span>
 								<button class="btn-agregar"
-									onclick="abrirModalVasos('Palomitas de chicharrón')">+</button>
+									onclick="abrirModalOpciones('Palomitas de chicharrón')">+</button>
 							</div>
 						</div>
 					</article>
@@ -498,26 +500,14 @@
 					</article>
 
 					<article class="producto-card" data-categoria="bebidas">
-						<img src="images/galeria/bebidas/Jugosnat.jpeg" alt="Jugos naturales de Candy Pop" loading="lazy">
+						<img src="images/galeria/bebidas/Jugosnat.jpeg" alt="Jugos naturales de Candy Pop"
+							loading="lazy">
 						<div class="producto-info">
 							<h3>Jugos Naturales</h3>
 							<p>100% naturales, frescos y hechos con frutas de temporada.</p>
 							<div class="producto-footer">
 								<span class="precio">RD$100</span>
 								<button class="btn-agregar" onclick="agregarAlCarrito('Jugo Natural', 100)">+</button>
-							</div>
-						</div>
-					</article>
-
-					<article class="producto-card" data-categoria="bebidas">
-						<img src="images/favoritos/Jugosnat.jpeg" alt="Jugos naturales Candy Pop" loading="lazy">
-						<div class="producto-info">
-							<h3>Jugos naturales</h3>
-							<p>Hechos con fruta natural, sin nada artificial.</p>
-							<div class="producto-footer">
-								<span class="precio">RD$100</span>
-								<button class="btn-agregar"
-									onclick="agregarAlCarrito('Jugos naturales', 100)">+</button>
 							</div>
 						</div>
 					</article>
@@ -819,7 +809,7 @@
 	</main>
 
 	<!-- Footer -->
-	 
+
 	<footer id="contacto" class="footer">
 		<div class="container footer-content">
 			<div class="footer-logo">
