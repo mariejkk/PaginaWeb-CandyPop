@@ -20,54 +20,54 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
 
 
 //CARRUSEL DE COMBOS
- 
+
 function activarCarrusel(trackId, flechaIzqId, flechaDerId) {
     const track = document.getElementById(trackId);
     const flechaIzq = document.getElementById(flechaIzqId);
     const flechaDer = document.getElementById(flechaDerId);
- 
+
     if (!track || !flechaIzq || !flechaDer) return;
- 
+
     const getScrollAmount = () => {
         const item = track.querySelector('.carrusel-item');
         return item ? item.offsetWidth + 24 : 300;
     };
- 
+
     flechaDer.addEventListener('click', () => {
         track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
     });
- 
+
     flechaIzq.addEventListener('click', () => {
         track.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
     });
 }
- 
+
 activarCarrusel('comboTrack', 'flechaComboIzq', 'flechaComboDer');
 
 
 //SCROLL REVEAL
- 
+
 const revealElements = document.querySelectorAll('.reveal');
- 
+
 const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            revealObserver.unobserve(entry.target); 
+            revealObserver.unobserve(entry.target);
         }
     });
 }, {
     threshold: 0.2
 });
- 
+
 revealElements.forEach(el => revealObserver.observe(el));
- 
+
 
 //PRODUCTOS: FILTROS POR CATEGORIA
- 
+
 const filtroBotones = document.querySelectorAll('.filtro-btn');
 const productoCards = document.querySelectorAll('.producto-card');
- 
+
 function filtrarProductos(filtro) {
     productoCards.forEach(card => {
         const categoria = card.dataset.categoria;
@@ -80,7 +80,7 @@ filtroBotones.forEach(boton => {
     boton.addEventListener('click', () => {
         filtroBotones.forEach(b => b.classList.remove('active'));
         boton.classList.add('active');
- 
+
         const filtro = boton.dataset.filtro;
         filtrarProductos(filtro);
     });
@@ -90,12 +90,15 @@ window.addEventListener('DOMContentLoaded', () => {
     const botonActivo = document.querySelector('.filtro-btn.active');
     const filtroInicial = botonActivo ? botonActivo.dataset.filtro : 'palomitas';
     filtrarProductos(filtroInicial);
+
+    actualizarContadorCarrito();
+    renderizarCarrito();
 });
 
 
 // CARRITO DE COMPRAS Y PANEL DE CHECKOUT
 
-let carrito = []; 
+let carrito = JSON.parse(localStorage.getItem('candypop_carrito')) || [];
 const contadorCarritoElement = document.getElementById('contador-carrito');
 
 const btnCarrito = document.getElementById('btn-carrito');
@@ -105,6 +108,10 @@ const listaProductosCarrito = document.getElementById('listaProductosCarrito');
 const carritoTotalMonto = document.getElementById('carritoTotalMonto');
 const formCheckout = document.getElementById('formCheckout');
 
+
+function guardarCarrito() {
+    localStorage.setItem('candypop_carrito', JSON.stringify(carrito));
+}
 
 if (btnCarrito) {
     btnCarrito.addEventListener('click', (e) => {
@@ -134,13 +141,14 @@ function agregarAlCarrito(nombreProducto, precioProducto) {
     if (productoExistente) {
         productoExistente.cantidad++;
     } else {
-        carrito.push({ 
-            nombre: nombreProducto, 
+        carrito.push({
+            nombre: nombreProducto,
             precio: precioNumerico,
-            cantidad: 1 
+            cantidad: 1
         });
     }
 
+    guardarCarrito();
     actualizarContadorCarrito();
     renderizarCarrito();
 }
@@ -153,7 +161,7 @@ function actualizarContadorCarrito() {
 
     contadorCarritoElement.style.transform = 'scale(1.4)';
     contadorCarritoElement.style.transition = 'transform 0.2s ease';
-    
+
     setTimeout(() => {
         contadorCarritoElement.style.transform = 'scale(1)';
     }, 200);
@@ -175,7 +183,7 @@ function renderizarCarrito() {
     carrito.forEach((item, index) => {
         const precioUnitario = Number(item.precio) || 0;
         const cantidad = Number(item.cantidad) || 0;
-        
+
         const subtotal = precioUnitario * cantidad;
         totalGeneral += subtotal;
 
@@ -203,9 +211,25 @@ function cambiarCantidad(index, cambio) {
     if (carrito[index].cantidad <= 0) {
         carrito.splice(index, 1);
     }
+    guardarCarrito();
     actualizarContadorCarrito();
     renderizarCarrito();
 }
+
+// Mostrar/ocultar el campo de dirección según el tipo de entrega
+const radiosEntrega = document.querySelectorAll('input[name="tipoEntrega"]');
+const seccionDireccion = document.getElementById('seccionDireccion');
+
+function actualizarVisibilidadDireccion() {
+    const tipoSeleccionado = document.querySelector('input[name="tipoEntrega"]:checked').value;
+    seccionDireccion.style.display = (tipoSeleccionado === 'Retiro') ? 'none' : '';
+}
+
+radiosEntrega.forEach(radio => {
+    radio.addEventListener('change', actualizarVisibilidadDireccion);
+});
+
+actualizarVisibilidadDireccion();
 
 // Envío del pedido final formateado hacia WhatsApp
 if (formCheckout) {
@@ -226,7 +250,7 @@ if (formCheckout) {
         let totalGeneral = carrito.reduce((acc, item) => acc + (item.precio * item.cantidad), 0);
 
         let mensaje = `*¡Hola, Candy Pop!* \nQuiero realizar el siguiente pedido:\n\n`;
-        
+
         carrito.forEach(item => {
             mensaje += `▪️ ${item.cantidad}x ${item.nombre} (RD$${item.precio * item.cantidad})\n`;
         });
@@ -244,8 +268,13 @@ if (formCheckout) {
 
         const telefonoNegocio = "18094868433";
         const urlWhatsApp = `https://wa.me/${telefonoNegocio}?text=${encodeURIComponent(mensaje)}`;
-        
+
         window.open(urlWhatsApp, '_blank');
+
+        carrito = [];
+        guardarCarrito();
+        actualizarContadorCarrito();
+        renderizarCarrito();
     });
 }
 
@@ -263,16 +292,7 @@ const selectPalomitasVasos = document.getElementById('selectPalomitasVasos');
 const selectPastelRelleno = document.getElementById('selectPastelRelleno');
 
 let productoSeleccionadoActual = '';
-let tipoProductoActual = ''; 
-
-document.querySelectorAll('.btn-abrir-modal').forEach(boton => {
-    boton.addEventListener('click', (e) => {
-        const tarjeta = e.target.closest('.producto-card');
-        const nombreProducto = tarjeta ? tarjeta.getAttribute('data-producto') : '';
-        
-        abrirModalOpciones(nombreProducto);
-    });
-});
+let tipoProductoActual = '';
 
 function abrirModalOpciones(nombreProducto) {
     productoSeleccionadoActual = nombreProducto;
@@ -282,7 +302,7 @@ function abrirModalOpciones(nombreProducto) {
         tipoProductoActual = 'palomitas';
         if (tituloModalPalomitas) tituloModalPalomitas.textContent = "Elige tu vaso";
         if (descripcionModalTexto) descripcionModalTexto.textContent = "Selecciona el tamaño de vaso que prefieres:";
-        
+
         grupoSelectPalomitas.style.display = 'flex';
         grupoSelectPastel.style.display = 'none';
 
@@ -290,7 +310,7 @@ function abrirModalOpciones(nombreProducto) {
         tipoProductoActual = 'pastel';
         if (tituloModalPalomitas) tituloModalPalomitas.textContent = "Elige tu relleno";
         if (descripcionModalTexto) descripcionModalTexto.textContent = "Selecciona el tipo de carne o preparación:";
-        
+
         grupoSelectPalomitas.style.display = 'none';
         grupoSelectPastel.style.display = 'flex';
     }

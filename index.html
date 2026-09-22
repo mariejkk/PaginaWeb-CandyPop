@@ -2,834 +2,779 @@
 <html lang="es">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description"
-		content="Candy Pop ofrece dulces, salados, bebidas, palomitas y paquetes para cumpleaños en Santo Domingo Este.">
-	<meta name="robots" content="index, follow">
-	<title>Candy Pop | Dulces y Salados</title>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Candy Pop ofrece dulces, salados, bebidas, palomitas y paquetes para cumpleaños en Santo Domingo Este.">
+    <meta name="robots" content="index, follow">
+    <title>Candy Pop | Dulces y Salados</title>
 	<link rel="icon" type="image/png" href="images/Logo.png">
-	<link rel="canonical" href="https://candypopdulcesysalados.com/">
 
-	<meta property="og:type" content="website">
-	<meta property="og:title" content="Candy Pop | Dulces y Salados">
-	<meta property="og:description"
-		content="Dulces, salados, bebidas, palomitas y paquetes para cumpleaños en Santo Domingo Este.">
-	<meta property="og:image" content="images/Portada.jpeg">
+    <link rel="canonical" href="https://candypop.vercel.app/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Candy Pop | Dulces y Salados">
+    <meta property="og:description" content="Dulces, salados, bebidas, palomitas y paquetes para cumpleaños en Santo Domingo Este.">
+    <meta property="og:image" content="https://candypop.vercel.app/images/Portada.webp">
 
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link rel="preload" as="image" href="images/Portada.jpeg">
-	<link
-		href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
-		rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="image" href="images/Portada.webp">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-	<link rel="stylesheet" href="style.css">
-	<script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
 
-	<!-- HEADER -->
-	<header class="header">
-		<div class="container header-container">
-			<a href="/" class="logo" aria-label="Candy Pop - Inicio">
-				<img src="images/Logo.png" alt="Candy Pop">
-			</a>
-
-			<nav class="nav-menu" id="navMenu">
-				<a href="#inicio">Inicio</a>
-				<a href="#productos">Menú</a>
-				<a href="#combos">Combos</a>
-				<a href="#eventos">Eventos</a>
-				<a href="#nosotros">Nosotros</a>
-				<a href="#contacto">Contacto</a>
-			</nav>
-
-			<div class="header-btn">
-				<a href="#carrito" id="btn-carrito" class="carrito-icon btn-whatsapp">
-					🛒 <span id="contador-carrito">0</span>
-				</a>
-			</div>
-
-			<button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú" aria-expanded="false">
-				<span></span>
-				<span></span>
-				<span></span>
-			</button>
-		</div>
-	</header>
-
-	<!-- MAIN -->
-	<main>
-
-		<!-- HERO SECTION -->
-		<section class="hero" id="inicio">
-			<div class="hero-overlay">
-				<div class="container hero-content">
-					<p class="subtitulo-hero">Desde Santo Domingo Este para ti</p>
-					<h1>Entre lo <span class="texto-amarillo">dulce</span> y lo <span
-							class="texto-amarillo">salado</span> está el gusto de la vida.</h1>
-
-					<div class="hero-buttons">
-						<a href="#productos" class="btn btn-primary">Ver Menú</a>
-						<a href="#combos" class="btn btn-secondary">Ver Combos</a>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- PRODUCTOS -->
-		<section id="productos" class="productos">
-			<div class="container">
-				<h2 class="titulo-seccion reveal">Nuestros <span class="texto-amarillo">productos</span></h2>
-
-				<div class="tabs-categoria reveal">
-					<button class="filtro-btn active" data-filtro="palomitas">Palomitas</button>
-					<button class="filtro-btn" data-filtro="dulces">Dulces</button>
-					<button class="filtro-btn" data-filtro="salados">Salados</button>
-					<button class="filtro-btn" data-filtro="bebidas">Bebidas</button>
-				</div>
-
-				<div class="producto-grid" id="productoGrid">
-
-					<!-- Dulces -->
-					<article class="producto-card" data-categoria="dulces">
-						<img src="images/galeria/dulces/favorito6.jpeg" alt="Cheesecake Candy Pop" loading="lazy">
-						<div class="producto-info">
-							<h3>Cheesecake</h3>
-							<p>Cremoso, con topping de frutos rojos.</p>
-							<div class="producto-footer">
-								<span class="precio">RD$250</span>
-								<button class="btn-agregar" onclick="agregarAlCarrito('Cheesecake', 250)">+</button>
-							</div>
-						</div>
-					</article>
-
-					<article class="producto-card" data-categoria="dulces">
-						<img src="images/galeria/dulces/favorito7.jpeg" alt="Tres leches Candy Pop" loading="lazy">
-						<div class="producto-info">
-							<h3>Tres leches</h3>
-							<p>Bizcocho bañado en tres leches y dulce de leche.</p>
-							<div class="producto-footer">
-								<span class="precio">RD$300</span>
-								<button class="btn-agregar" onclick="agregarAlCarrito('Tres leches', 300)">+</button>
-							</div>
-						</div>
-					</article>
-
-					<article class="producto-card" data-categoria="dulces">
-						<img src="images/galeria/dulces/chocoflan.jpeg" alt="Chocoflan Candy Pop" loading="lazy">
-						<div class="producto-info">
-							<h3>Chocoflan</h3>
-							<p>La combinación perfecta entre bizcocho y flan.</p>
-							<div class="producto-footer">
-								<span class="precio">RD$200</span>
-								<button class="btn-agregar" onclick="agregarAlCarrito('Chocoflan', 200)">+</button>
-							</div>
-						</div>
-					</article>
-
-					<article class="producto-card" data-categoria="dulces">
-						<img src="images/galeria/dulces/flan.jpeg" alt="Flan casero Candy Pop" loading="lazy">
-						<div class="producto-info">
-							<h3>Flan</h3>
-							<p>Receta tradicional, cremosa y dulce.</p>
-							<div class="producto-footer">
-								<span class="precio">RD$150</span>
-								<button class="btn-agregar" onclick="agregarAlCarrito('Flan', 150)">+</button>
-							</div>
-						</div>
-					</article>
-
-					<article class="producto-card" data-categoria="dulces">
-						<img src="images/galeria/dulces/fresacrema.jpeg" alt="Fresas con crema Candy Pop"
-							loading="lazy">
-						<div class="producto-info">
-							<h3>Fresas con crema</h3>
-							<p>Fresas frescas bañadas en crema dulce.</p>
-							<div class="producto-footer">
-								<span class="precio">RD$300</span>
-								<button class="btn-agregar"
-									onclick="agregarAlCarrito('Fresas con crema', 300)">+</button>
-							</div>
-						</div>
-					</article>
-
-					<article class="producto-card" data-categoria="dulces">
-						<img src="images/galeria/dulces/mousse.jpeg" alt="Mousse de Oreo Candy Pop" loading="lazy">
-						<div class="producto-info">
-							<h3>Mousse de Oreo</h3>
-							<p>Cremoso, con trocitos de galleta Oreo.</p>
-							<div class="producto-footer">
-								<span class="precio">RD$175</span>
-								<button class="btn-agregar" onclick="agregarAlCarrito('Mousse de Oreo', 175)">+</button>
-							</div>
-						</div>
-					</article>
-
-					<article class="producto-card" data-categoria="dulces">
-						<img src="images/galeria/dulces/mousse.jpeg" alt="Mousse de Chinola" loading="lazy">
-						<div class="producto-info">
-							<h3>Mousse de Chinola</h3>
-							<p>Suave, cremoso y con un toque tropical y refrescante.</p>
-							<div class="producto-footer">
-								<span class="precio">RD$175</span>
-								<button class="btn-agregar"
-									onclick="agregarAlCarrito('Mousse de Chinola', 175)">+</button>
-							</div>
-						</div>
-					</article>
-
-					<article class="producto-card" data-categoria="dulces">
-						<img src="images/galeria/dulces/moussefresa.jpeg" alt="Mousse de fresa Candy Pop"
-							loading="lazy">
-						<div class="producto-info">
-							<h3>Mousse de fresa</h3>
-							<p>Suave, ligero y con sabor natural a fresa.</p>
-							<div class="producto-footer">
-								<span class="precio">RD$175</span>
-								<button class="btn-agregar"
-									onclick="agregarAlCarrito('Mousse de fresa', 175)">+</button>
-							</div>
-						</div>
-					</article>
-
-					<article class="producto-card" data-categoria="dulces">
-						<img src="images/galeria/dulces/brownie.jpeg" alt="Brownie Candy Pop" loading="lazy">
-						<div class="producto-info">
-							<h3>Brownie</h3>
-							<p>Denso, chocolatoso e irresistible.</p>
-							<div class="producto-footer">
-								<span class="precio">RD$200</span>
-								<button class="btn-agregar" onclick="agregarAlCarrito('Brownie', 200)">+</button>
-							</div>
-						</div>
-					</article>
-
-					<article class="producto-card" data-categoria="dulces">
-						<img src="images/galeria/dulces/bizcochos.jpeg" alt="Bizcochos artesanales Candy Pop"
-							loading="lazy">
-						<div class="producto-info">
-							<h3>Bizcochos artesanales</h3>
-							<p>Suaves y esponjosos, para cualquier ocasión.</p>
-							<div class="producto-footer">
-								<span class="precio">RD$250</span>
-								<button class="btn-agregar"
-									onclick="agregarAlCarrito('Bizcochos artesanales', 250)">+</button>
-							</div>
-						</div>
-					</article>
-
-					<article class="producto-card" data-categoria="dulces">
-						<img src="images/galeria/dulces/bizcochovainilla.jpeg" alt="Bizcocho de vainilla Candy Pop"
-							loading="lazy">
-						<div class="producto-info">
-							<h3>Bizcocho de vainilla</h3>
-							<p>Clásico sabor a vainilla, siempre un acierto.</p>
-							<div class="producto-footer">
-								<span class="precio">RD$200</span>
-								<button class="btn-agregar"
-									onclick="agregarAlCarrito('Bizcocho de vainilla', 200)">+</button>
-							</div>
-						</div>
-					</article>
-
-					<article class="producto-card" data-categoria="dulces">
-						<img src="images/galeria/dulces/Bizcochococo.jpeg" alt="Bizcocho de coco Candy Pop"
-							loading="lazy">
-						<div class="producto-info">
-							<h3>Bizcocho de coco</h3>
-							<p>Húmedo, con un toque tropical de coco.</p>
-							<div class="producto-footer">
-								<span class="precio">RD$200</span>
-								<button class="btn-agregar"
-									onclick="agregarAlCarrito('Bizcocho de coco', 200)">+</button>
-							</div>
-						</div>
-
-					</article>
-					<article class="producto-card" data-categoria="dulces">
-						<img src="images/galeria/dulces/obleas.jpeg" alt="Obleas Candy Pop" loading="lazy">
-						<div class="producto-info">
-							<h3>Obleas</h3>
-							<p>Crujientes, rellenas de dulce de leche.</p>
-							<div class="producto-footer">
-								<span class="precio">RD$100</span>
-								<button class="btn-agregar" onclick="agregarAlCarrito('Obleas', 100)">+</button>
-							</div>
-						</div>
-					</article>
-
-					<article class="producto-card" data-categoria="dulces">
-						<img src="images/galeria/dulces/gomitas.jpeg" alt="gomitas de Candy Pop" loading="lazy">
-						<div class="producto-info">
-							<h3>Gomitas</h3>
-							<p>Dulces, suaves y llenas de sabor.</p>
-							<div class="producto-footer">
-								<span class="precio">RD$175</span>
-								<button class="btn-agregar" onclick="agregarAlCarrito('gomitas', 175)">+</button>
-							</div>
-						</div>
-					</article>
-
-					<article class="producto-card" data-categoria="dulces">
-						<img src="images/galeria/dulces/Paletas.jpeg" alt="Paletas de caramelo" loading="lazy">
-						<div class="producto-info">
-							<h3>Paletas de caramelo</h3>
-							<p>Dulces, duraderas y con un sabor irresistible.</p>
-							<div class="producto-footer">
-								<span class="precio">RD$100</span>
-								<button class="btn-agregar"
-									onclick="agregarAlCarrito('paleta de caramelo', 100)">+</button>
-							</div>
-						</div>
-					</article>
-
-					<article class="producto-card" data-categoria="dulces">
-						<img src="images/galeria/dulces/gelatina.jpeg" alt="Gelatinas Candy Pop" loading="lazy">
-						<div class="producto-info">
-							<h3>Gelatinas</h3>
-							<p>Refrescantes y coloridas, perfectas para compartir.</p>
-							<div class="producto-footer">
-								<span class="precio">RD$50</span>
-								<button class="btn-agregar" onclick="agregarAlCarrito('Gelatinas', 50)">+</button>
-							</div>
-						</div>
-					</article>
-
-					<!-- Salados -->
-
-					<article class="producto-card" data-categoria="salados">
-						<img src="images/galeria/salados/hamburguesa.jpeg" alt="hamburger casero" loading="lazy">
-						<div class="producto-info">
-							<h3>hamburguesa</h3>
-							<p>Carne artesanal jugosa, queso derretido y vegetales frescos en pan suave..</p>
-							<div class="producto-footer">
-								<span class="precio">RD$300</span>
-								<button class="btn-agregar" onclick="agregarAlCarrito('Hamburguesa', 300)">+</button>
-							</div>
-						</div>
-					</article>
-
-					<article class="producto-card" data-categoria="salados">
-						<img src="images/galeria/salados/nachos.jpeg" alt="Nachos con queso Candy Pop" loading="lazy">
-						<div class="producto-info">
-							<h3>Nachos con queso</h3>
-							<p>Crujientes nachos bañados en queso derretido.</p>
-							<div class="producto-footer">
-								<span class="precio">RD$150</span>
-								<button class="btn-agregar"
-									onclick="agregarAlCarrito('Nachos con queso', 150)">+</button>
-							</div>
-						</div>
-					</article>
-
-					<article class="producto-card" data-categoria="salados">
-						<img src="images/galeria/salados/hot dog.jpeg" alt="Hot dog de Candy Pop" loading="lazy">
-						<div class="producto-info">
-							<h3>Hot dog</h3>
-							<p>Salchicha jugosa en pan suave, con aderezos al gusto.</p>
-							<div class="producto-footer">
-								<span class="precio">RD$125</span>
-								<button class="btn-agregar" onclick="agregarAlCarrito('Hot dog', 125)">+</button>
-							</div>
-						</div>
-					</article>
-
-					<article class="producto-card" data-categoria="salados">
-						<img src="images/galeria/salados/sandwich.jpeg" alt="Sándwich Candy Pop" loading="lazy">
-						<div class="producto-info">
-							<h3>Sándwich</h3>
-							<p>Relleno abundante, ideal para un antojo rápido.</p>
-							<div class="producto-footer">
-								<span class="precio">RD$150</span>
-								<button class="btn-agregar" onclick="agregarAlCarrito('Sándwich', 150)">+</button>
-							</div>
-						</div>
-					</article>
-
-					<article class="producto-card" data-categoria="salados">
-						<img src="images/galeria/salados/Salchipan.jpeg" alt="Salchipán Candy Pop" loading="lazy">
-						<div class="producto-info">
-							<h3>Salchipán</h3>
-							<p>Salchicha envuelta y frita, crocante por fuera.</p>
-							<div class="producto-footer">
-								<span class="precio">RD$125</span>
-								<button class="btn-agregar" onclick="agregarAlCarrito('Salchipán', 125)">+</button>
-							</div>
-						</div>
-					</article>
-
-					<article class="producto-card" data-categoria="salados">
-						<img src="images/galeria/salados/chicharron.jpeg" alt="Chicharrón Candy Pop" loading="lazy">
-						<div class="producto-info">
-							<h3>Chicharrón</h3>
-							<p>Crocante y sabroso, al estilo dominicano.</p>
-							<div class="producto-footer">
-								<span class="precio">RD$200</span>
-								<button class="btn-agregar" onclick="agregarAlCarrito('Chicharrón', 200)">+</button>
-							</div>
-						</div>
-					</article>
-
-					<article class="producto-card" data-categoria="salados">
-						<img src="images/galeria/salados/pastelenhoja.jpeg" alt="Pastel en hoja" loading="lazy">
-						<div class="producto-info">
-							<h3>Pastel en hoja</h3>
-							<p>Pastelito relleno, envuelto y horneado en hoja.</p>
-							<div class="producto-footer">
-								<span class="precio">Desde RD$150</span>
-								<button class="btn-agregar" onclick="abrirModalOpciones('Pastel en hoja')">+</button>
-							</div>
-						</div>
-					</article>
-
-					<!-- Palomitas -->
-
-					<article class="producto-card" data-categoria="palomitas">
-						<img src="images/galeria/palomitas/palomitas1.jpeg" alt="Palomitas de caramelo" loading="lazy">
-						<div class="producto-info">
-							<h3>Palomitas de caramelo</h3>
-							<p>Dulces y crocantes, bañadas en caramelo.</p>
-							<div class="producto-footer">
-								<span class="precio">Desde RD$200</span>
-								<button class="btn-agregar"
-									onclick="abrirModalOpciones('Palomitas de caramelo')">+</button>
-							</div>
-						</div>
-					</article>
-
-					<article class="producto-card" data-categoria="palomitas">
-						<img src="images/galeria/palomitas/palomitas2.jpeg" alt="Palomitas de queso, tajín y limón"
-							loading="lazy">
-						<div class="producto-info">
-							<h3>Palomitas de queso, tajín y limón</h3>
-							<p>El toque picante y cítrico perfecto.</p>
-							<div class="producto-footer">
-								<span class="precio">Desde RD$200</span>
-								<button class="btn-agregar"
-									onclick="abrirModalOpciones('Palomitas de queso, tajín y limón')">+</button>
-							</div>
-						</div>
-					</article>
-
-					<article class="producto-card" data-categoria="palomitas">
-						<img src="images/galeria/palomitas/palomitas3.jpeg" alt="Palomitas blancas" loading="lazy">
-						<div class="producto-info">
-							<h3>Palomitas blancas</h3>
-							<p>Simples, clásicas y deliciosas.</p>
-							<div class="producto-footer">
-								<span class="precio">Desde RD$200</span>
-								<button class="btn-agregar" onclick="abrirModalOpciones('Palomitas blancas')">+</button>
-							</div>
-						</div>
-					</article>
-
-					<article class="producto-card" data-categoria="palomitas">
-						<img src="images/galeria/palomitas/palomitas4.jpeg" alt="Palomitas de chicharrón"
-							loading="lazy">
-						<div class="producto-info">
-							<h3>Palomitas de chicharrón</h3>
-							<p>Con el toque salado del chicharrón.</p>
-							<div class="producto-footer">
-								<span class="precio">Desde RD$200</span>
-								<button class="btn-agregar"
-									onclick="abrirModalOpciones('Palomitas de chicharrón')">+</button>
-							</div>
-						</div>
-					</article>
-
-					<!-- MODAL DE OPCIONAS PARA PASTELES Y PALOMITAS -->
-
-					<div class="carrito-overlay" id="modalVasosOverlay">
-						<div class="carrito-drawer modal-vasos-drawer">
-							<div class="carrito-header">
-								<h3 id="tituloModalPalomitas">Elige una opción</h3>
-								<button class="cerrar-carrito" id="cerrarModalVasos" type="button">&times;</button>
-							</div>
-							<div class="carrito-body">
-								<p class="modal-vasos-descripcion" id="descripcionModalTexto">
-									Selecciona tu preferencia:
-								</p>
-
-								<!-- PALOMITAS -->
-								<div class="form-group grupo-select-opcion" id="grupoSelectPalomitas">
-									<label for="selectPalomitasVasos">Tamaños disponibles</label>
-									<select id="selectPalomitasVasos" class="form-control-custom modal-vasos-select">
-										<option value="200" data-tamanio="Vaso 21onz">Vaso 21onz - RD$200</option>
-										<option value="300" data-tamanio="Vaso 26onz">Vaso 26onz - RD$300</option>
-										<option value="400" data-tamanio="Vaso 46onz">Vaso 46onz - RD$400</option>
-										<option value="450" data-tamanio="Vaso 82onz">Vaso 82onz - RD$450</option>
-									</select>
-								</div>
-
-								<!-- PASTELES EN HOJA-->
-								<div class="form-group grupo-select-opcion" id="grupoSelectPastel"
-									style="display: none;">
-									<label for="selectPastelRelleno">Tipo de relleno / Carne</label>
-									<select id="selectPastelRelleno" class="form-control-custom modal-vasos-select">
-										<option value="150" data-tamanio="De Pollo">De Pollo - RD$150</option>
-										<option value="150" data-tamanio="De Res">De Res - RD$150</option>
-										<option value="175" data-tamanio="Mixto">Mixto (Pollo y Res) - RD$175</option>
-									</select>
-								</div>
-
-								<button type="button" class="btn-enviar-whatsapp modal-vasos-boton"
-									id="btnConfirmarModal">
-									Agregar al carrito 🛒
-								</button>
-							</div>
-						</div>
-					</div>
-
-					<!-- Bebidas -->
-
-					<article class="producto-card" data-categoria="bebidas">
-						<img src="images/galeria/bebidas/yunyun.jpeg" alt="Yun Yun Candy Pop" loading="lazy">
-						<div class="producto-info">
-							<h3>Yun Yun</h3>
-							<p>Bebida refrescante hecha en casa.</p>
-							<div class="producto-footer">
-								<span class="precio">RD$100</span>
-								<button class="btn-agregar" onclick="agregarAlCarrito('Yun Yun', 100)">+</button>
-							</div>
-						</div>
-					</article>
-
-					<article class="producto-card" data-categoria="bebidas">
-						<img src="images/galeria/bebidas/Jugosnat.jpeg" alt="Jugos naturales de Candy Pop"
-							loading="lazy">
-						<div class="producto-info">
-							<h3>Jugos Naturales</h3>
-							<p>100% naturales, frescos y hechos con frutas de temporada.</p>
-							<div class="producto-footer">
-								<span class="precio">RD$100</span>
-								<button class="btn-agregar" onclick="agregarAlCarrito('Jugo Natural', 100)">+</button>
-							</div>
-						</div>
-					</article>
-
-					<article class="producto-card" data-categoria="bebidas">
-						<img src="images/galeria/bebidas/refrescos.jpeg" alt="Refrescos Candy Pop" loading="lazy">
-						<div class="producto-info">
-							<h3>Refrescos</h3>
-							<p>Variados, bien fríos, para acompañar tu pedido.</p>
-							<div class="producto-footer">
-								<span class="precio">RD$60</span>
-								<button class="btn-agregar" onclick="agregarAlCarrito('Refrescos', 60)">+</button>
-							</div>
-						</div>
-					</article>
-
-					<article class="producto-card" data-categoria="bebidas">
-						<img src="images/galeria/bebidas/cafe.jpeg" alt="Café Candy Pop" loading="lazy">
-						<div class="producto-info">
-							<h3>Café</h3>
-							<p>Calentito, perfecto para acompañar tus dulces.</p>
-							<div class="producto-footer">
-								<span class="precio">RD$50</span>
-								<button class="btn-agregar" onclick="agregarAlCarrito('Café', 50)">+</button>
-							</div>
-						</div>
-					</article>
-				</div>
-			</div>
-		</section>
-
-		<!-- PANEL LATERAL DEL CARRITO / CHECKOUT -->
-
-		<div class="carrito-overlay" id="carritoOverlay">
-			<div class="carrito-drawer" id="carritoDrawer">
-
-				<div class="carrito-header">
-					<h3>Tu Carrito 🛒</h3>
-					<button class="cerrar-carrito" id="cerrarCarrito">&times;</button>
-				</div>
-
-				<div class="carrito-body">
-
-					<div id="listaProductosCarrito" class="lista-productos-carrito">
-						<p class="carrito-vacio">Tu carrito está vacío</p>
-					</div>
-
-					<div class="carrito-total-container">
-						<span>Total</span>
-						<span id="carritoTotalMonto" class="carrito-total-precio">RD$0</span>
-					</div>
-
-					<form id="formCheckout">
-
-						<!-- Nombre -->
-						<div class="form-group">
-							<label for="nombreCliente">Tu nombre</label>
-							<input type="text" id="nombreCliente" placeholder="Escribe tu nombre" required>
-						</div>
-
-						<!-- Tipo de entrega -->
-						<div class="form-group">
-							<label>¿Cómo lo recibirás?</label>
-							<div class="opciones-grid">
-								<label class="opcion-card active">
-									<input type="radio" name="tipoEntrega" value="Delivery" checked>
-									<span>Delivery</span>
-								</label>
-								<label class="opcion-card">
-									<input type="radio" name="tipoEntrega" value="Retiro">
-									<span>Retiro</span>
-								</label>
-							</div>
-						</div>
-
-						<!-- Dirección -->
-						<div class="form-group" id="seccionDireccion">
-							<label for="direccionCliente">Dirección de entrega</label>
-							<textarea id="direccionCliente" rows="2"
-								placeholder="Sector, calle, número y referencia"></textarea>
-						</div>
-
-						<!-- Método de pago -->
-						<div class="form-group">
-							<label>Método de pago</label>
-							<div class="opciones-grid">
-								<label class="opcion-card active">
-									<input type="radio" name="metodoPago" value="Efectivo" checked>
-									<span>Efectivo</span>
-								</label>
-								<label class="opcion-card">
-									<input type="radio" name="metodoPago" value="Transferencia">
-									<span>Transferencia</span>
-								</label>
-							</div>
-						</div>
-
-						<!-- Nota -->
-						<div class="form-group">
-							<label for="notaCliente">Nota para el pedido</label>
-							<input type="text" id="notaCliente" placeholder="Ej.: sin cebolla, llamar al llegar">
-						</div>
-
-						<!-- Botón de Envío -->
-						<button type="submit" class="btn-enviar-whatsapp">
-							<i class="fa-brands fa-whatsapp"></i> Enviar pedido por WhatsApp
-						</button>
-						<p class="aviso-pedido">Confirmaremos disponibilidad y costo del delivery.</p>
-					</form>
-				</div>
-			</div>
-		</div>
-
-		<!-- COMBOS -->
-
-		<section id="combos" class="combos">
-			<div class="container">
-				<h2 class="titulo-seccion reveal">Nuestros <span class="texto-amarillo">Combos</span></h2>
-				<p class="combos-intro reveal">Opciones preparadas para disfrutar más y pagar menos.</p>
-			</div>
-
-			<div class="carrusel-wrapper reveal">
-				<button class="carrusel-flecha carrusel-flecha-izq" id="flechaComboIzq" aria-label="Anterior">
-					&#10094;
-				</button>
-
-				<div class="carrusel-track" id="comboTrack">
-					<div class="carrusel-item combo-item">
-						<img src="images/combos/combo1.jpeg" alt="Combo Hot Dog + Refresco" loading="lazy">
-						<div class="combo-info">
-							<h3>Hot Dog + Refresco</h3>
-							<div class="combo-footer">
-								<span class="combo-precio">RD$125</span>
-								<button class="btn-agregar"
-									onclick="agregarAlCarrito('Combo Hot Dog + Refresco', 125)">+</button>
-							</div>
-						</div>
-					</div>
-
-					<div class="carrusel-item combo-item">
-						<img src="images/combos/combo2.jpeg" alt="Combo Palomitas Blancas + Refresco" loading="lazy">
-						<div class="combo-info">
-							<h3>Palomitas Blancas + Refresco</h3>
-							<div class="combo-footer">
-								<span class="combo-precio">RD$100</span>
-								<button class="btn-agregar"
-									onclick="agregarAlCarrito('Combo Palomitas Blancas + Refresco', 100)">+</button>
-							</div>
-						</div>
-					</div>
-
-					<div class="carrusel-item combo-item">
-						<img src="images/combos/combo3.jpeg" alt="Combo Palomitas de Caramelo + Refresco"
-							loading="lazy">
-						<div class="combo-info">
-							<h3>Palomitas de Caramelo + Refresco</h3>
-							<div class="combo-footer">
-								<span class="combo-precio">RD$200</span>
-								<button class="btn-agregar"
-									onclick="agregarAlCarrito('Combo Palomitas de Caramelo + Refresco', 200)">+</button>
-							</div>
-						</div>
-					</div>
-
-					<div class="carrusel-item combo-item">
-						<img src="images/combos/combo4.jpeg" alt="Combo Antojo Total" loading="lazy">
-						<div class="combo-info">
-							<h3>Combo Antojo Total</h3>
-							<div class="combo-footer">
-								<span class="combo-precio">RD$550</span>
-								<button class="btn-agregar"
-									onclick="agregarAlCarrito('Combo Antojo Total', 550)">+</button>
-							</div>
-						</div>
-					</div>
-
-					<div class="carrusel-item combo-item">
-						<img src="images/combos/combo5.jpeg" alt="Combo Dulce" loading="lazy">
-						<div class="combo-info">
-							<h3>Combo Dulce</h3>
-							<div class="combo-footer">
-								<span class="combo-precio">RD$500</span>
-								<button class="btn-agregar" onclick="agregarAlCarrito('Combo Dulce', 500)">+</button>
-							</div>
-						</div>
-					</div>
-
-					<div class="carrusel-item combo-item">
-						<img src="images/combos/combo6.jpeg" alt="Combo Nachos con queso + Refresco" loading="lazy">
-						<div class="combo-info">
-							<h3>Nachos con queso + Refresco</h3>
-							<div class="combo-footer">
-								<span class="combo-precio">RD$200</span>
-								<button class="btn-agregar"
-									onclick="agregarAlCarrito('Combo Nachos con queso + Refresco', 200)">+</button>
-							</div>
-						</div>
-					</div>
-
-					<div class="carrusel-item combo-item">
-						<img src="images/combos/combo7.jpeg" alt="Combo Pastel en Hoja + Refresco" loading="lazy">
-						<div class="combo-info">
-							<h3>Pastel en Hoja + Refresco</h3>
-							<div class="combo-footer">
-								<span class="combo-precio">RD$200</span>
-								<button class="btn-agregar"
-									onclick="agregarAlCarrito('Combo Pastel en Hoja + Refresco', 200)">+</button>
-							</div>
-						</div>
-					</div>
-
-					<div class="carrusel-item combo-item">
-						<img src="images/combos/combo8.jpeg" alt="Combo Sándwich + Refresco" loading="lazy">
-						<div class="combo-info">
-							<h3>Sándwich + Refresco</h3>
-							<div class="combo-footer">
-								<span class="combo-precio">RD$200</span>
-								<button class="btn-agregar"
-									onclick="agregarAlCarrito('Combo Sándwich + Refresco', 200)">+</button>
-							</div>
-						</div>
-					</div>
-
-					<div class="carrusel-item combo-item">
-						<img src="images/combos/combo9.jpeg" alt="Combo Palomitas de Queso, Tajín y Limón + Refresco"
-							loading="lazy">
-						<div class="combo-info">
-							<h3>Palomitas de Queso, Tajín y Limón + Refresco</h3>
-							<div class="combo-footer">
-								<span class="combo-precio">RD$300</span>
-								<button class="btn-agregar"
-									onclick="agregarAlCarrito('Combo Palomitas de Queso, Tajín y Limón + Refresco', 300)">+</button>
-							</div>
-						</div>
-					</div>
-
-					<div class="carrusel-item combo-item">
-						<img src="images/combos/combo10.jpeg" alt="Combo Familiar" loading="lazy">
-						<div class="combo-info">
-							<h3>Combo Familiar</h3>
-							<div class="combo-footer">
-								<span class="combo-precio">RD$500</span>
-								<button class="btn-agregar" onclick="agregarAlCarrito('Combo Familiar', 500)">+</button>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<button class="carrusel-flecha carrusel-flecha-der" id="flechaComboDer" aria-label="Siguiente">
-					&#10095;
-				</button>
-			</div>
-		</section>
-
-		<!-- EVENTOS Y SERVICIOS -->
-
-		<section id="eventos" class="eventos">
-			<div class="container paquetes-content reveal">
-				<div class="paquetes-texto">
-					<p class="paquetes-eyebrow">Celebra con nosotros</p>
-					<h2>Eventos y <span class="texto-amarillo">servicios</span></h2>
-					<p class="paquetes-descripcion">
-						Haz que tu celebración sea más especial. Llevamos la diversión y el sabor de Candy Pop
-						a tu cumpleaños o evento.
-					</p>
-
-					<ul class="eventos-servicios">
-						<li>🍿 Palomitas</li>
-						<li>🍭 Algodón de azúcar</li>
-						<li>🌭 Hot dogs</li>
-						<li>🍰 Bizcochos</li>
-						<li>🎊 Actividades y eventos</li>
-					</ul>
-
-					<a href="https://wa.me/18094868433?text=Hola,%20quiero%20cotizar%20un%20evento%20con%20Candy%20Pop"
-						target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-						Cotizar mi evento
-					</a>
-				</div>
-
-				<img src="images/paquetes/paquetescump.png" alt="Servicios para eventos y cumpleaños Candy Pop"
-					class="paquetes-poster">
-			</div>
-		</section>
-
-		<!-- SOBRE NOSOTROS -->
-
-		<section id="nosotros" class="nosotros">
-			<div class="container nosotros-content reveal">
-				<img src="images/Logo.png" alt="" class="nosotros-logo" aria-hidden="true">
-				<h2 class="titulo-seccion">Somos <span class="texto-amarillo">Candy Pop</span></h2>
-				<p>
-					Nos dedicamos a ofrecer dulces, salados y servicios para celebraciones, creando opciones
-					deliciosas para compartir en cada ocasión.
-				</p>
-			</div>
-		</section>
-
-	</main>
-
-	<!-- Footer -->
-
-	<footer id="contacto" class="footer">
-		<div class="container footer-content">
-			<div class="footer-logo">
-				<img src="images/Logo.png" alt="Candy Pop Logo">
-			</div>
-
-			<div class="footer-info">
-				<a href="https://wa.me/18094868433" target="_blank" rel="noopener noreferrer"><i
-						class="fa-brands fa-whatsapp"></i>
-					809-486-8433</a>
-				<a href="https://www.google.com/maps/search/?api=1&query=Calle+Trinitaria+esquina+Calle+Fanete+Santo+Domingo+Este"
-					target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-location-dot"></i> Calle Trinitaria
-					esq. Fanete,
-					Sto. Dgo. Este</a>
-				<a href="https://www.instagram.com/candypopdulcesysalados/" target="_blank" rel="noopener noreferrer">
-					<i class="fa-brands fa-instagram"></i>
-					@candypopdulcesysalados</a>
-			</div>
-		</div>
-	</footer>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="/" class="logo" aria-label="Candy Pop - Inicio">
+                <img src="images/Logo.png" alt="Candy Pop">
+            </a>
+
+            <nav class="nav-menu" id="navMenu">
+                <a href="#inicio">Inicio</a>
+                <a href="#productos">Menú</a>
+                <a href="#combos">Combos</a>
+                <a href="#eventos">Eventos</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+
+            <div class="header-btn">
+                <a href="#carrito" id="btn-carrito" class="carrito-icon btn-whatsapp">
+                    🛒 <span id="contador-carrito">0</span>
+                </a>
+            </div>
+
+            <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="hero" id="inicio">
+            <div class="hero-overlay">
+                <div class="container hero-content">
+                    <p class="subtitulo-hero">Desde Santo Domingo Este para ti</p>
+                    <h1>Entre lo <span class="texto-amarillo">dulce</span> y lo <span class="texto-amarillo">salado</span> está el gusto de la vida.</h1>
+
+                    <div class="hero-buttons">
+                        <a href="#productos" class="btn btn-primary">Ver Menú</a>
+                        <a href="#combos" class="btn btn-secondary">Ver Combos</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCTOS -->
+        <section id="productos" class="productos">
+            <div class="container">
+                <h2 class="titulo-seccion reveal">Nuestros <span class="texto-amarillo">productos</span></h2>
+
+                <div class="tabs-categoria reveal">
+                    <button class="filtro-btn active" data-filtro="palomitas">Palomitas</button>
+                    <button class="filtro-btn" data-filtro="dulces">Dulces</button>
+                    <button class="filtro-btn" data-filtro="salados">Salados</button>
+                    <button class="filtro-btn" data-filtro="bebidas">Bebidas</button>
+                </div>
+
+                <div class="producto-grid" id="productoGrid">
+
+                    <!-- Dulces -->
+                    <article class="producto-card" data-categoria="dulces">
+                        <img src="images/galeria/dulces/favorito6.jpeg" alt="Cheesecake Candy Pop" loading="lazy">
+                        <div class="producto-info">
+                            <h3>Cheesecake</h3>
+                            <p>Cremoso, con topping de frutos rojos.</p>
+                            <div class="producto-footer">
+                                <span class="precio">RD$250</span>
+                                <button class="btn-agregar" onclick="agregarAlCarrito('Cheesecake', 250)">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="producto-card" data-categoria="dulces">
+                        <img src="images/galeria/dulces/Pudindepan.jpeg" alt="Pudin de pan" loading="lazy">
+                        <div class="producto-info">
+                            <h3>Pudin de Pan</h3>
+                            <p>Pudin de pan con topping de dulce leche.</p>
+                            <div class="producto-footer">
+                                <span class="precio">RD$175</span>
+                                <button class="btn-agregar" onclick="agregarAlCarrito('Pudin de pan', 175)">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="producto-card" data-categoria="dulces">
+                        <img src="images/galeria/dulces/chocoflan.jpeg" alt="Chocoflan Candy Pop" loading="lazy">
+                        <div class="producto-info">
+                            <h3>Chocoflan</h3>
+                            <p>La combinación perfecta entre bizcocho y flan.</p>
+                            <div class="producto-footer">
+                                <span class="precio">RD$225</span>
+                                <button class="btn-agregar" onclick="agregarAlCarrito('Chocoflan', 225)">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="producto-card" data-categoria="dulces">
+                        <img src="images/galeria/dulces/flan.jpeg" alt="Flan casero Candy Pop" loading="lazy">
+                        <div class="producto-info">
+                            <h3>Flan</h3>
+                            <p>Receta tradicional, cremosa y dulce.</p>
+                            <div class="producto-footer">
+                                <span class="precio">RD$200</span>
+                                <button class="btn-agregar" onclick="agregarAlCarrito('Flan', 200)">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="producto-card" data-categoria="dulces">
+                        <img src="images/galeria/dulces/fresacrema.jpeg" alt="Fresas con crema Candy Pop" loading="lazy">
+                        <div class="producto-info">
+                            <h3>Fresas con crema</h3>
+                            <p>Fresas frescas bañadas en crema dulce.</p>
+                            <div class="producto-footer">
+                                <span class="precio">RD$300</span>
+                                <button class="btn-agregar" onclick="agregarAlCarrito('Fresas con crema', 300)">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="producto-card" data-categoria="dulces">
+                        <img src="images/galeria/dulces/mousse.jpeg" alt="Mousse de Oreo Candy Pop" loading="lazy">
+                        <div class="producto-info">
+                            <h3>Mousse de Oreo</h3>
+                            <p>Cremoso, con trocitos de galleta Oreo.</p>
+                            <div class="producto-footer">
+                                <span class="precio">RD$200</span>
+                                <button class="btn-agregar" onclick="agregarAlCarrito('Mousse de Oreo', 200)">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="producto-card" data-categoria="dulces">
+                        <img src="images/galeria/dulces/moussechinola.jpeg" alt="Mousse de Chinola" loading="lazy">
+                        <div class="producto-info">
+                            <h3>Mousse de Chinola</h3>
+                            <p>Suave, cremoso y con un toque tropical y refrescante.</p>
+                            <div class="producto-footer">
+                                <span class="precio">RD$200</span>
+                                <button class="btn-agregar" onclick="agregarAlCarrito('Mousse de Chinola', 200)">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="producto-card" data-categoria="dulces">
+                        <img src="images/galeria/dulces/moussefresa.jpeg" alt="Mousse de fresa Candy Pop" loading="lazy">
+                        <div class="producto-info">
+                            <h3>Mousse de fresa</h3>
+                            <p>Suave, ligero y con sabor natural a fresa.</p>
+                            <div class="producto-footer">
+                                <span class="precio">RD$200</span>
+                                <button class="btn-agregar" onclick="agregarAlCarrito('Mousse de fresa', 200)">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="producto-card" data-categoria="dulces">
+                        <img src="images/galeria/dulces/brownie.jpeg" alt="Brownie Candy Pop" loading="lazy">
+                        <div class="producto-info">
+                            <h3>Brownie</h3>
+                            <p>Denso, chocolatoso e irresistible.</p>
+                            <div class="producto-footer">
+                                <span class="precio">RD$200</span>
+                                <button class="btn-agregar" onclick="agregarAlCarrito('Brownie', 200)">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="producto-card" data-categoria="dulces">
+                        <img src="images/galeria/dulces/bizcochos.jpeg" alt="Bizcochos artesanales Candy Pop" loading="lazy">
+                        <div class="producto-info">
+                            <h3>Bizcochos artesanales</h3>
+                            <p>Suaves y esponjosos, para cualquier ocasión.</p>
+                            <div class="producto-footer">
+                                <span class="precio">RD$250</span>
+                                <button class="btn-agregar" onclick="agregarAlCarrito('Bizcochos artesanales', 250)">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="producto-card" data-categoria="dulces">
+                        <img src="images/galeria/dulces/bizcochovainilla.jpeg" alt="Bizcocho de vainilla Candy Pop" loading="lazy">
+                        <div class="producto-info">
+                            <h3>Bizcocho de vainilla</h3>
+                            <p>Clásico sabor a vainilla, siempre un acierto.</p>
+                            <div class="producto-footer">
+                                <span class="precio">RD$200</span>
+                                <button class="btn-agregar" onclick="agregarAlCarrito('Bizcocho de vainilla', 200)">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="producto-card" data-categoria="dulces">
+                        <img src="images/galeria/dulces/Bizcochococo.jpeg" alt="Bizcocho de coco Candy Pop" loading="lazy">
+                        <div class="producto-info">
+                            <h3>Bizcocho de coco</h3>
+                            <p>Húmedo, con un toque tropical de coco.</p>
+                            <div class="producto-footer">
+                                <span class="precio">RD$200</span>
+                                <button class="btn-agregar" onclick="agregarAlCarrito('Bizcocho de coco', 200)">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="producto-card" data-categoria="dulces">
+                        <img src="images/galeria/dulces/obleas.jpeg" alt="Obleas Candy Pop" loading="lazy">
+                        <div class="producto-info">
+                            <h3>Obleas</h3>
+                            <p>Crujientes, rellenas de dulce de leche.</p>
+                            <div class="producto-footer">
+                                <span class="precio">RD$100</span>
+                                <button class="btn-agregar" onclick="agregarAlCarrito('Obleas', 100)">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="producto-card" data-categoria="dulces">
+                        <img src="images/galeria/dulces/gomitas.jpeg" alt="Gomitas de Candy Pop" loading="lazy">
+                        <div class="producto-info">
+                            <h3>Gomitas</h3>
+                            <p>Dulces, suaves y llenas de sabor.</p>
+                            <div class="producto-footer">
+                                <span class="precio">RD$175</span>
+                                <button class="btn-agregar" onclick="agregarAlCarrito('Gomitas', 175)">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="producto-card" data-categoria="dulces">
+                        <img src="images/galeria/dulces/Paletas.jpeg" alt="Paletas de caramelo" loading="lazy">
+                        <div class="producto-info">
+                            <h3>Paletas de caramelo</h3>
+                            <p>Dulces, duraderas y con un sabor irresistible.</p>
+                            <div class="producto-footer">
+                                <span class="precio">RD$100</span>
+                                <button class="btn-agregar" onclick="agregarAlCarrito('Paleta de caramelo', 100)">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="producto-card" data-categoria="dulces">
+                        <img src="images/galeria/dulces/gelatina.jpeg" alt="Gelatinas Candy Pop" loading="lazy">
+                        <div class="producto-info">
+                            <h3>Gelatinas</h3>
+                            <p>Refrescantes y coloridas, perfectas para compartir.</p>
+                            <div class="producto-footer">
+                                <span class="precio">RD$50</span>
+                                <button class="btn-agregar" onclick="agregarAlCarrito('Gelatinas', 50)">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Salados -->
+                    <article class="producto-card" data-categoria="salados">
+                        <img src="images/galeria/salados/hamburguesa.jpeg" alt="Hamburguesa casera" loading="lazy">
+                        <div class="producto-info">
+                            <h3>Hamburguesa</h3>
+                            <p>Carne artesanal jugosa, queso derretido y vegetales frescos en pan suave.</p>
+                            <div class="producto-footer">
+                                <span class="precio">RD$300</span>
+                                <button class="btn-agregar" onclick="agregarAlCarrito('Hamburguesa', 300)">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="producto-card" data-categoria="salados">
+                        <img src="images/galeria/salados/nachos.jpeg" alt="Nachos con queso Candy Pop" loading="lazy">
+                        <div class="producto-info">
+                            <h3>Nachos con queso</h3>
+                            <p>Crujientes nachos bañados en queso derretido.</p>
+                            <div class="producto-footer">
+                                <span class="precio">RD$150</span>
+                                <button class="btn-agregar" onclick="agregarAlCarrito('Nachos con queso', 150)">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="producto-card" data-categoria="salados">
+                        <img src="images/galeria/salados/hot dog.jpeg" alt="Hot dog de Candy Pop" loading="lazy">
+                        <div class="producto-info">
+                            <h3>Hot dog</h3>
+                            <p>Salchicha jugosa en pan suave, con aderezos al gusto.</p>
+                            <div class="producto-footer">
+                                <span class="precio">RD$125</span>
+                                <button class="btn-agregar" onclick="agregarAlCarrito('Hot dog', 125)">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="producto-card" data-categoria="salados">
+                        <img src="images/galeria/salados/sandwich.jpeg" alt="Sándwich Candy Pop" loading="lazy">
+                        <div class="producto-info">
+                            <h3>Sándwich</h3>
+                            <p>Relleno abundante, ideal para un antojo rápido.</p>
+                            <div class="producto-footer">
+                                <span class="precio">RD$150</span>
+                                <button class="btn-agregar" onclick="agregarAlCarrito('Sándwich', 150)">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="producto-card" data-categoria="salados">
+                        <img src="images/galeria/salados/Salchipan.jpeg" alt="Salchipán Candy Pop" loading="lazy">
+                        <div class="producto-info">
+                            <h3>Salchipán</h3>
+                            <p>Salchicha envuelta y frita, crocante por fuera.</p>
+                            <div class="producto-footer">
+                                <span class="precio">RD$125</span>
+                                <button class="btn-agregar" onclick="agregarAlCarrito('Salchipán', 125)">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="producto-card" data-categoria="salados">
+                        <img src="images/galeria/salados/chicharron.jpeg" alt="Chicharrón Candy Pop" loading="lazy">
+                        <div class="producto-info">
+                            <h3>Chicharrón</h3>
+                            <p>Crocante y sabroso, al estilo dominicano.</p>
+                            <div class="producto-footer">
+                                <span class="precio">RD$200</span>
+                                <button class="btn-agregar" onclick="agregarAlCarrito('Chicharrón', 200)">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="producto-card" data-categoria="salados">
+                        <img src="images/galeria/salados/pastelenhoja.jpeg" alt="Pastel en hoja" loading="lazy">
+                        <div class="producto-info">
+                            <h3>Pastel en hoja</h3>
+                            <p>Pastelito relleno, envuelto y horneado en hoja.</p>
+                            <div class="producto-footer">
+                                <span class="precio">Desde RD$150</span>
+                                <button class="btn-agregar" onclick="abrirModalOpciones('Pastel en hoja')">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Palomitas -->
+                    <article class="producto-card" data-categoria="palomitas">
+                        <img src="images/galeria/palomitas/palomitas1.jpeg" alt="Palomitas de caramelo" loading="lazy">
+                        <div class="producto-info">
+                            <h3>Palomitas de caramelo</h3>
+                            <p>Dulces y crocantes, bañadas en caramelo.</p>
+                            <div class="producto-footer">
+                                <span class="precio">Desde RD$200</span>
+                                <button class="btn-agregar" onclick="abrirModalOpciones('Palomitas de caramelo')">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="producto-card" data-categoria="palomitas">
+                        <img src="images/galeria/palomitas/palomitas2.jpeg" alt="Palomitas de queso, tajín y limón" loading="lazy">
+                        <div class="producto-info">
+                            <h3>Palomitas de queso, tajín y limón</h3>
+                            <p>El toque picante y cítrico perfecto.</p>
+                            <div class="producto-footer">
+                                <span class="precio">Desde RD$200</span>
+                                <button class="btn-agregar" onclick="abrirModalOpciones('Palomitas de queso, tajín y limón')">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="producto-card" data-categoria="palomitas">
+                        <img src="images/galeria/palomitas/palomitas3.jpeg" alt="Palomitas blancas" loading="lazy">
+                        <div class="producto-info">
+                            <h3>Palomitas blancas</h3>
+                            <p>Simples, clásicas y deliciosas.</p>
+                            <div class="producto-footer">
+                                <span class="precio">Desde RD$200</span>
+                                <button class="btn-agregar" onclick="abrirModalOpciones('Palomitas blancas')">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="producto-card" data-categoria="palomitas">
+                        <img src="images/galeria/palomitas/palomitas4.jpeg" alt="Palomitas de chicharrón" loading="lazy">
+                        <div class="producto-info">
+                            <h3>Palomitas de chicharrón</h3>
+                            <p>Con el toque salado del chicharrón.</p>
+                            <div class="producto-footer">
+                                <span class="precio">Desde RD$200</span>
+                                <button class="btn-agregar" onclick="abrirModalOpciones('Palomitas de chicharrón')">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Bebidas -->
+                    <article class="producto-card" data-categoria="bebidas">
+                        <img src="images/galeria/bebidas/yunyun.jpeg" alt="Yun Yun Candy Pop" loading="lazy">
+                        <div class="producto-info">
+                            <h3>Yun Yun</h3>
+                            <p>Bebida refrescante hecha en casa.</p>
+                            <div class="producto-footer">
+                                <span class="precio">RD$100</span>
+                                <button class="btn-agregar" onclick="agregarAlCarrito('Yun Yun', 100)">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="producto-card" data-categoria="bebidas">
+                        <img src="images/galeria/bebidas/Jugosnat.jpeg" alt="Jugos naturales de Candy Pop" loading="lazy">
+                        <div class="producto-info">
+                            <h3>Jugos Naturales</h3>
+                            <p>100% naturales, frescos y hechos con frutas de temporada.</p>
+                            <div class="producto-footer">
+                                <span class="precio">RD$100</span>
+                                <button class="btn-agregar" onclick="agregarAlCarrito('Jugo Natural', 100)">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="producto-card" data-categoria="bebidas">
+                        <img src="images/galeria/bebidas/refrescos.jpeg" alt="Refrescos Candy Pop" loading="lazy">
+                        <div class="producto-info">
+                            <h3>Refrescos</h3>
+                            <p>Variados, bien fríos, para acompañar tu pedido.</p>
+                            <div class="producto-footer">
+                                <span class="precio">RD$60</span>
+                                <button class="btn-agregar" onclick="agregarAlCarrito('Refrescos', 60)">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="producto-card" data-categoria="bebidas">
+                        <img src="images/galeria/bebidas/cafe.jpeg" alt="Café Candy Pop" loading="lazy">
+                        <div class="producto-info">
+                            <h3>Café</h3>
+                            <p>Calentito, perfecto para acompañar tus dulces.</p>
+                            <div class="producto-footer">
+                                <span class="precio">RD$50</span>
+                                <button class="btn-agregar" onclick="agregarAlCarrito('Café', 50)">+</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- MODAL DE OPCIONES PARA PASTELES Y PALOMITAS -->
+        <div class="carrito-overlay" id="modalVasosOverlay">
+            <div class="carrito-drawer modal-vasos-drawer">
+                <div class="carrito-header">
+                    <h3 id="tituloModalPalomitas">Elige una opción</h3>
+                    <button class="cerrar-carrito" id="cerrarModalVasos" type="button">&times;</button>
+                </div>
+                <div class="carrito-body">
+                    <p class="modal-vasos-descripcion" id="descripcionModalTexto">
+                        Selecciona tu preferencia:
+                    </p>
+
+                    <!-- PALOMITAS -->
+                    <div class="form-group grupo-select-opcion" id="grupoSelectPalomitas">
+                        <label for="selectPalomitasVasos">Tamaños disponibles</label>
+                        <select id="selectPalomitasVasos" class="form-control-custom modal-vasos-select">
+                            <option value="200" data-tamanio="Vaso 21onz">Vaso 21onz - RD$200</option>
+                            <option value="300" data-tamanio="Vaso 26onz">Vaso 26onz - RD$300</option>
+                            <option value="400" data-tamanio="Vaso 46onz">Vaso 46onz - RD$400</option>
+                            <option value="450" data-tamanio="Vaso 82onz">Vaso 82onz - RD$450</option>
+                        </select>
+                    </div>
+
+                    <!-- PASTELES EN HOJA -->
+                    <div class="form-group grupo-select-opcion" id="grupoSelectPastel" style="display: none;">
+                        <label for="selectPastelRelleno">Tipo de relleno / Carne</label>
+                        <select id="selectPastelRelleno" class="form-control-custom modal-vasos-select">
+                            <option value="150" data-tamanio="De Pollo">De Pollo - RD$150</option>
+                            <option value="150" data-tamanio="De Res">De Res - RD$150</option>
+                            <option value="175" data-tamanio="Mixto">Mixto (Pollo y Res) - RD$175</option>
+                        </select>
+                    </div>
+
+                    <button type="button" class="btn-enviar-whatsapp modal-vasos-boton" id="btnConfirmarModal">
+                        Agregar al carrito 🛒
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- PANEL LATERAL DEL CARRITO / CHECKOUT -->
+        <div class="carrito-overlay" id="carritoOverlay">
+            <div class="carrito-drawer" id="carritoDrawer">
+                <div class="carrito-header">
+                    <h3>Tu Carrito 🛒</h3>
+                    <button class="cerrar-carrito" id="cerrarCarrito">&times;</button>
+                </div>
+
+                <div class="carrito-body">
+                    <div id="listaProductosCarrito" class="lista-productos-carrito">
+                        <p class="carrito-vacio">Tu carrito está vacío</p>
+                    </div>
+
+                    <div class="carrito-total-container">
+                        <span>Total</span>
+                        <span id="carritoTotalMonto" class="carrito-total-precio">RD$0</span>
+                    </div>
+
+                    <form id="formCheckout">
+                        <!-- Nombre -->
+                        <div class="form-group">
+                            <label for="nombreCliente">Tu nombre</label>
+                            <input type="text" id="nombreCliente" placeholder="Escribe tu nombre" required>
+                        </div>
+
+                        <!-- Tipo de entrega -->
+                        <div class="form-group">
+                            <label>¿Cómo lo recibirás?</label>
+                            <div class="opciones-grid">
+                                <label class="opcion-card active">
+                                    <input type="radio" name="tipoEntrega" value="Delivery" checked>
+                                    <span>Delivery</span>
+                                </label>
+                                <label class="opcion-card">
+                                    <input type="radio" name="tipoEntrega" value="Retiro">
+                                    <span>Retiro</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Dirección -->
+                        <div class="form-group" id="seccionDireccion">
+                            <label for="direccionCliente">Dirección de entrega</label>
+                            <textarea id="direccionCliente" rows="2" placeholder="Sector, calle, número y referencia"></textarea>
+                        </div>
+
+                        <!-- Método de pago -->
+                        <div class="form-group">
+                            <label>Método de pago</label>
+                            <div class="opciones-grid">
+                                <label class="opcion-card active">
+                                    <input type="radio" name="metodoPago" value="Efectivo" checked>
+                                    <span>Efectivo</span>
+                                </label>
+                                <label class="opcion-card">
+                                    <input type="radio" name="metodoPago" value="Transferencia">
+                                    <span>Transferencia</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Nota -->
+                        <div class="form-group">
+                            <label for="notaCliente">Nota para el pedido</label>
+                            <input type="text" id="notaCliente" placeholder="Ej.: sin cebolla, llamar al llegar">
+                        </div>
+
+                        <!-- Botón de Envío -->
+                        <button type="submit" class="btn-enviar-whatsapp">
+                            <i class="fa-brands fa-whatsapp"></i> Enviar pedido por WhatsApp
+                        </button>
+                        <p class="aviso-pedido">Confirmaremos disponibilidad y costo del delivery.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- COMBOS -->
+        <section id="combos" class="combos">
+            <div class="container">
+                <h2 class="titulo-seccion reveal">Nuestros <span class="texto-amarillo">Combos</span></h2>
+                <p class="combos-intro reveal">Opciones preparadas para disfrutar más y pagar menos.</p>
+            </div>
+
+            <div class="carrusel-wrapper reveal">
+                <button class="carrusel-flecha carrusel-flecha-izq" id="flechaComboIzq" aria-label="Anterior">&#10094;</button>
+
+                <div class="carrusel-track" id="comboTrack">
+                    <div class="carrusel-item combo-item">
+                        <img src="images/combos/combo1.jpeg" alt="Combo Hot Dog + Refresco" loading="lazy">
+                        <div class="combo-info">
+                            <h3>Hot Dog + Refresco</h3>
+                            <div class="combo-footer">
+                                <span class="combo-precio">RD$125</span>
+                                <button class="btn-agregar" onclick="agregarAlCarrito('Combo Hot Dog + Refresco', 125)">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carrusel-item combo-item">
+                        <img src="images/combos/combo2.jpeg" alt="Combo Palomitas Blancas + Refresco" loading="lazy">
+                        <div class="combo-info">
+                            <h3>Palomitas Blancas + Refresco</h3>
+                            <div class="combo-footer">
+                                <span class="combo-precio">RD$100</span>
+                                <button class="btn-agregar" onclick="agregarAlCarrito('Combo Palomitas Blancas + Refresco', 100)">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carrusel-item combo-item">
+                        <img src="images/combos/combo3.jpeg" alt="Combo Palomitas de Caramelo + Refresco" loading="lazy">
+                        <div class="combo-info">
+                            <h3>Palomitas de Caramelo + Refresco</h3>
+                            <div class="combo-footer">
+                                <span class="combo-precio">RD$200</span>
+                                <button class="btn-agregar" onclick="agregarAlCarrito('Combo Palomitas de Caramelo + Refresco', 200)">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carrusel-item combo-item">
+                        <img src="images/combos/combo4.jpeg" alt="Combo Antojo Total" loading="lazy">
+                        <div class="combo-info">
+                            <h3>Combo Antojo Total</h3>
+                            <div class="combo-footer">
+                                <span class="combo-precio">RD$550</span>
+                                <button class="btn-agregar" onclick="agregarAlCarrito('Combo Antojo Total', 550)">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carrusel-item combo-item">
+                        <img src="images/combos/combo5.jpeg" alt="Combo Dulce" loading="lazy">
+                        <div class="combo-info">
+                            <h3>Combo Dulce</h3>
+                            <div class="combo-footer">
+                                <span class="combo-precio">RD$500</span>
+                                <button class="btn-agregar" onclick="agregarAlCarrito('Combo Dulce', 500)">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carrusel-item combo-item">
+                        <img src="images/combos/combo6.jpeg" alt="Combo Nachos con queso + Refresco" loading="lazy">
+                        <div class="combo-info">
+                            <h3>Nachos con queso + Refresco</h3>
+                            <div class="combo-footer">
+                                <span class="combo-precio">RD$200</span>
+                                <button class="btn-agregar" onclick="agregarAlCarrito('Combo Nachos con queso + Refresco', 200)">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carrusel-item combo-item">
+                        <img src="images/combos/combo7.jpeg" alt="Combo Pastel en Hoja + Refresco" loading="lazy">
+                        <div class="combo-info">
+                            <h3>Pastel en Hoja + Refresco</h3>
+                            <div class="combo-footer">
+                                <span class="combo-precio">RD$200</span>
+                                <button class="btn-agregar" onclick="agregarAlCarrito('Combo Pastel en Hoja + Refresco', 200)">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carrusel-item combo-item">
+                        <img src="images/combos/combo8.jpeg" alt="Combo Sándwich + Refresco" loading="lazy">
+                        <div class="combo-info">
+                            <h3>Sándwich + Refresco</h3>
+                            <div class="combo-footer">
+                                <span class="combo-precio">RD$200</span>
+                                <button class="btn-agregar" onclick="agregarAlCarrito('Combo Sándwich + Refresco', 200)">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carrusel-item combo-item">
+                        <img src="images/combos/combo9.jpeg" alt="Combo Palomitas de Queso, Tajín y Limón + Refresco" loading="lazy">
+                        <div class="combo-info">
+                            <h3>Palomitas de Queso, Tajín y Limón + Refresco</h3>
+                            <div class="combo-footer">
+                                <span class="combo-precio">RD$300</span>
+                                <button class="btn-agregar" onclick="agregarAlCarrito('Combo Palomitas de Queso, Tajín y Limón + Refresco', 300)">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carrusel-item combo-item">
+                        <img src="images/combos/combo10.jpeg" alt="Combo Familiar" loading="lazy">
+                        <div class="combo-info">
+                            <h3>Combo Familiar</h3>
+                            <div class="combo-footer">
+                                <span class="combo-precio">RD$500</span>
+                                <button class="btn-agregar" onclick="agregarAlCarrito('Combo Familiar', 500)">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carrusel-flecha carrusel-flecha-der" id="flechaComboDer" aria-label="Siguiente">&#10095;</button>
+            </div>
+        </section>
+
+        <!-- EVENTOS Y SERVICIOS -->
+        <section id="eventos" class="eventos">
+            <div class="container paquetes-content reveal">
+                <div class="paquetes-texto">
+                    <p class="paquetes-eyebrow">Celebra con nosotros</p>
+                    <h2>Eventos y <span class="texto-amarillo">servicios</span></h2>
+                    <p class="paquetes-descripcion">
+                        Haz que tu celebración sea más especial. Llevamos la diversión y el sabor de Candy Pop a tu cumpleaños o evento.
+                    </p>
+
+                    <ul class="eventos-servicios">
+                        <li>🍿 Palomitas</li>
+                        <li>🍭 Algodón de azúcar</li>
+                        <li>🌭 Hot dogs</li>
+                        <li>🍰 Bizcochos</li>
+                        <li>🎊 Actividades y eventos</li>
+                    </ul>
+
+                    <a href="https://wa.me/18094868433?text=Hola,%20quiero%20cotizar%20un%20evento%20con%20Candy%20Pop" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        Cotizar mi evento
+                    </a>
+                </div>
+
+                <img src="images/paquetes/paquetescump.webp" alt="Servicios para eventos y cumpleaños Candy Pop" class="paquetes-poster">
+            </div>
+        </section>
+
+        <!-- SOBRE NOSOTROS -->
+        <section id="nosotros" class="nosotros">
+            <div class="container nosotros-content reveal">
+                <img src="images/Logo.png" alt="" class="nosotros-logo" aria-hidden="true">
+                <h2 class="titulo-seccion">Somos <span class="texto-amarillo">Candy Pop</span></h2>
+                <p>
+                    Nos dedicamos a ofrecer dulces, salados y servicios para celebraciones, creando opciones deliciosas para compartir en cada ocasión.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+   <!-- Footer -->
+    <footer id="contacto" class="footer">
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <img src="images/Logo.png" alt="Candy Pop Logo">
+            </div>
+
+            <div class="footer-info">
+                <a href="https://wa.me/18094868433" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-whatsapp"></i> 809-486-8433
+                </a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Calle+Trinitaria+esquina+Calle+Fanete+Santo+Domingo+Este" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-solid fa-location-dot"></i> Calle Trinitaria esq. Calle Fanete, Santo Domingo Este
+                </a>
+                <p>
+                    <i class="fa-solid fa-clock"></i> Martes a domingo: 10:30 am - 8:00 pm | Lunes: a partir de las 2:00 pm
+                </p>
+                <a href="https://www.instagram.com/candypopdulcesysalados/" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-instagram"></i> @candypopdulcesysalados
+                </a>
+            </div>
+        </div>
+    </footer>
+
 </body>
 
 </html>

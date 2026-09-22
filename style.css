@@ -1,5 +1,4 @@
 :root {
-
     --color-bg: #121212;
     --color-bg-oscuro-1: #1a0f0a;
     --color-bg-oscuro-2: #1a0802;
@@ -7,7 +6,6 @@
 
     --color-acento: #f1b318;
     --color-acento-btn: #d99a1b;
-    --color-borde-favoritos: #A67A00;
 
     --color-texto: #ffffff;
     --color-texto-muted: #d8d0c8;
@@ -15,15 +13,12 @@
     --color-whatsapp: #1b6b3f;
     --color-whatsapp-hover: #228c50;
     --color-whatsapp-icon: #25D366;
-    --color-instagram: #E1306C;
 
     --color-borde-filtro: #444;
     --color-card-bg: rgba(255, 255, 255, 0.04);
 
     --header-height: 76px;
-
     --transicion-rapida: 0.3s ease;
-    --transicion-media: 0.35s ease;
 }
 
 /*RESET & GENERAL*/
@@ -61,7 +56,6 @@ button:focus-visible {
 
 
 /*HEADER*/
-
 
 .header {
     position: fixed;
@@ -124,7 +118,6 @@ button:focus-visible {
 
 /*HAMBURGUESA*/
 
-
 .hamburger {
     display: none;
     flex-direction: column;
@@ -160,13 +153,12 @@ button:focus-visible {
 }
 
 
-/*HERO/INICIOL*/
-
+/*HERO*/
 
 .hero {
     position: relative;
     min-height: 100vh;
-    background: url('images/Portada.jpeg') no-repeat center center/cover;
+    background: url('images/Portada.webp') no-repeat center center/cover;
 }
 
 .hero-overlay {
@@ -204,7 +196,6 @@ button:focus-visible {
     color: var(--color-acento);
 }
 
-/* Botones Hero */
 .hero-buttons {
     display: flex;
     flex-wrap: wrap;
@@ -236,15 +227,8 @@ button:focus-visible {
     border: 2px solid var(--color-acento-btn);
 }
 
-.btn-grande {
-    margin-top: 8px;
-    padding: 18px 44px;
-    font-size: 17px;
-}
-
 
 /*ANIMATION REVEAL*/
-
 
 .reveal {
     opacity: 0;
@@ -257,17 +241,16 @@ button:focus-visible {
     transform: translateY(0);
 }
 
-/*PRODUCTOS*/
 
+/*PRODUCTOS*/
 
 .productos {
     padding: 60px 0 70px;
     background-color: var(--color-bg-oscuro-1);
-    border-top: 6px solid var(--color-borde-favoritos);
+    border-top: 6px solid var(--color-acento);
     scroll-margin-top: var(--header-height);
 }
 
-/* Pestañas de categoría */
 .tabs-categoria {
     display: flex;
     flex-wrap: wrap;
@@ -349,9 +332,6 @@ button:focus-visible {
     line-height: 1.5;
 }
 
-/*PRECIO Y BOTON DE AGREGAR AL CARRITO*/
-
-
 .producto-footer {
     display: flex;
     align-items: center;
@@ -389,7 +369,6 @@ button:focus-visible {
     transform: scale(1.08);
 }
 
-/* Estilo para el icono del carrito en el header */
 .carrito-icon {
     display: inline-flex;
     align-items: center;
@@ -406,7 +385,8 @@ button:focus-visible {
     border-radius: 50px;
 }
 
-/* MODAL FLOTANTE DEL CARRITO */
+
+/*MODAL Y CARRITO*/
 
 .carrito-overlay {
     position: fixed;
@@ -439,7 +419,7 @@ button:focus-visible {
     display: flex;
     flex-direction: column;
     border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
     border: 1px solid rgba(241, 179, 24, 0.2);
     transform: scale(0.9);
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -449,7 +429,6 @@ button:focus-visible {
     transform: scale(1);
 }
 
-/* Estilos específicos del modal de selección de vasos */
 .modal-vasos-drawer {
     max-width: 400px;
 }
@@ -472,6 +451,11 @@ button:focus-visible {
     outline: none;
 }
 
+.modal-vasos-select option {
+    color: #2b1a0f;
+    background-color: #ffffff;
+}
+
 .modal-vasos-boton {
     background-color: var(--color-acento);
     color: var(--color-bg-oscuro-1);
@@ -483,7 +467,7 @@ button:focus-visible {
     align-items: center;
     justify-content: space-between;
     padding: 20px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .carrito-header h3 {
@@ -510,34 +494,6 @@ button:focus-visible {
     flex-direction: column;
     gap: 12px;
     margin-bottom: 20px;
-  
-}
-
-.carrito-item-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 10px 14px;
-    border-radius: 12px;
-    font-size: 14px;
-}
-
-.carrito-item-controles {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.carrito-item-controles button {
-    background: var(--color-acento);
-    color: var(--color-bg-oscuro-1);
-    border: none;
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
-    font-weight: bold;
-    cursor: pointer;
 }
 
 .carrito-vacio {
@@ -562,6 +518,70 @@ button:focus-visible {
     color: var(--color-acento);
     font-size: 20px;
     font-family: 'Baloo 2', sans-serif;
+}
+
+.carrito-item-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.04);
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.carrito-item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.carrito-item-info strong {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.carrito-item-info small {
+    color: var(--color-acento);
+    font-weight: 700;
+}
+
+.carrito-item-controles {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.06);
+    padding: 4px 8px;
+    border-radius: 8px;
+}
+
+.carrito-item-controles button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-acento);
+    color: var(--color-bg-oscuro-1);
+    border: none;
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.carrito-item-controles button:hover {
+    background-color: #ffffff;
+    transform: scale(1.05);
+}
+
+.carrito-item-controles span {
+    font-size: 14px;
+    font-weight: 600;
+    min-width: 20px;
+    text-align: center;
+    color: var(--color-texto);
 }
 
 .form-group {
@@ -653,7 +673,23 @@ button:focus-visible {
     margin-top: 10px;
 }
 
-/*CARRUSEL COMBOS */
+
+/*COMBOS Y CARRUSEL*/
+
+.combos {
+    padding: 70px 0 90px;
+    background-color: var(--color-bg-oscuro-2);
+    border-top: 4px solid var(--color-acento);
+    overflow: hidden;
+    scroll-margin-top: var(--header-height);
+}
+
+.combos-intro {
+    margin-top: -12px;
+    margin-bottom: 35px;
+    color: var(--color-texto-muted);
+    font-size: 16px;
+}
 
 .carrusel-wrapper {
     position: relative;
@@ -703,24 +739,6 @@ button:focus-visible {
     color: var(--color-bg-oscuro-1);
 }
 
-
-/* COMBOS*/
-
-.combos {
-    padding: 70px 0 90px;
-    background-color: var(--color-bg-oscuro-2);
-    border-top: 4px solid var(--color-acento);
-    overflow: hidden;
-    scroll-margin-top: var(--header-height);
-}
-
-.combos-intro {
-    margin-top: -12px;
-    margin-bottom: 35px;
-    color: var(--color-texto-muted);
-    font-size: 16px;
-}
-
 .combo-item {
     display: flex;
     flex-direction: column;
@@ -765,7 +783,7 @@ button:focus-visible {
 }
 
 
-/* EVENTOS */
+/*EVENTOS*/
 
 .eventos {
     padding: 90px 0;
@@ -832,7 +850,7 @@ button:focus-visible {
 }
 
 
-/*SOBRE NOSOTROS */
+/*NOSOTROS*/
 
 .nosotros {
     padding: 80px 0;
@@ -863,7 +881,7 @@ button:focus-visible {
 /*FOOTER*/
 
 .footer {
-    padding: 30px 0;
+    padding: 40px 0;
     background-color: var(--color-bg-footer);
     border-top: 4px solid var(--color-acento);
 }
@@ -871,37 +889,39 @@ button:focus-visible {
 .footer-content {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
-    gap: 16px;
+    gap: 30px;
 }
 
 .footer-logo img {
-    height: 36px;
+    height: 48px;
     width: auto;
 }
 
 .footer-info {
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 30px;
+    flex-direction: column;
+    gap: 12px;
 }
 
 .footer-info a,
 .footer-info p {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     color: var(--color-texto-muted);
     text-decoration: none;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 500;
     transition: color var(--transicion-rapida);
 }
 
 .footer-info i {
     font-size: 16px;
+    color: var(--color-acento);
+    width: 20px;
+    text-align: center;
 }
 
 .footer-info a:hover {
@@ -909,7 +929,7 @@ button:focus-visible {
 }
 
 .footer-info a[href*="instagram"]:hover i {
-    color: var(--color-instagram);
+    color: #E1306C;
 }
 
 .footer-info a[href*="wa.me"]:hover i {
@@ -917,7 +937,7 @@ button:focus-visible {
 }
 
 
-/* RESPONSIVE DESIGN*/
+/*RESPONSIVE DESIGN*/
 
 @media (max-width: 900px) {
     .hamburger {
@@ -945,7 +965,7 @@ button:focus-visible {
         gap: 0;
         background-color: rgba(20, 10, 5, 0.97);
         overflow: hidden;
-        transition: max-height var(--transicion-media);
+        transition: max-height 0.35s ease;
     }
 
     .nav-menu.active {
@@ -1025,12 +1045,12 @@ button:focus-visible {
 
     .footer-content {
         flex-direction: column;
+        align-items: center;
         text-align: center;
     }
 
     .footer-info {
-        flex-direction: column;
-        gap: 12px;
+        align-items: center;
     }
 }
 
