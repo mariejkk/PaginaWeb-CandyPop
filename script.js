@@ -30,7 +30,7 @@ function activarCarrusel(trackId, flechaIzqId, flechaDerId) {
 
     const getScrollAmount = () => {
         const item = track.querySelector('.carrusel-item');
-        return item ? item.offsetWidth + 24 : 300;
+        return item ? item.offsetWidth + 20 : 300;
     };
 
     flechaDer.addEventListener('click', () => {
@@ -107,7 +107,7 @@ const cerrarCarritoBtn = document.getElementById('cerrarCarrito');
 const listaProductosCarrito = document.getElementById('listaProductosCarrito');
 const carritoTotalMonto = document.getElementById('carritoTotalMonto');
 const formCheckout = document.getElementById('formCheckout');
-
+const toastMensaje = document.getElementById('toastMensaje');
 
 function guardarCarrito() {
     localStorage.setItem('candypop_carrito', JSON.stringify(carrito));
@@ -235,10 +235,18 @@ function cambiarCantidad(index, cambio) {
 // Mostrar/ocultar el campo de dirección según el tipo de entrega
 const radiosEntrega = document.querySelectorAll('input[name="tipoEntrega"]');
 const seccionDireccion = document.getElementById('seccionDireccion');
+const direccionCliente = document.getElementById('direccionCliente');
 
 function actualizarVisibilidadDireccion() {
     const tipoSeleccionado = document.querySelector('input[name="tipoEntrega"]:checked').value;
-    seccionDireccion.style.display = (tipoSeleccionado === 'Retiro') ? 'none' : '';
+
+    if (tipoSeleccionado === 'Retiro') {
+        seccionDireccion.style.display = 'none';
+        direccionCliente.required = false;
+    } else {
+        seccionDireccion.style.display = '';
+        direccionCliente.required = true;
+    }
 }
 
 radiosEntrega.forEach(radio => {
