@@ -251,6 +251,13 @@ button:focus-visible {
     scroll-margin-top: var(--header-height);
 }
 
+.productos-intro {
+    margin-top: -12px;
+    margin-bottom: 35px;
+    color: var(--color-texto-muted);
+    font-size: 16px;
+}
+
 .tabs-categoria {
     display: flex;
     flex-wrap: wrap;
@@ -691,6 +698,7 @@ button:focus-visible {
     font-size: 16px;
 }
 
+
 .carrusel-wrapper {
     position: relative;
     display: flex;
@@ -936,6 +944,30 @@ button:focus-visible {
     color: var(--color-whatsapp-icon);
 }
 
+.toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background-color: var(--color-acento);
+    color: #1a1207;
+    font-weight: 600;
+    padding: 14px 24px;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 4000;
+}
+
+.toast.mostrar {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
 
 /*RESPONSIVE DESIGN*/
 

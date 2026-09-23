@@ -113,6 +113,21 @@ function guardarCarrito() {
     localStorage.setItem('candypop_carrito', JSON.stringify(carrito));
 }
 
+// Notificación tipo "toast" al agregar un producto                 
+let timeoutToast;                                                   
+function mostrarToast(mensaje) {                                     
+    const toast = document.getElementById('toastCarrito');           
+    if (!toast || !toastMensaje) return;                             
+
+    toastMensaje.textContent = mensaje;                             
+    toast.classList.add('mostrar');                                  
+
+    clearTimeout(timeoutToast);                                     
+    timeoutToast = setTimeout(() => {                                
+        toast.classList.remove('mostrar');                          
+    }, 2000);                                                         
+}        
+
 if (btnCarrito) {
     btnCarrito.addEventListener('click', (e) => {
         e.preventDefault();
@@ -149,6 +164,7 @@ function agregarAlCarrito(nombreProducto, precioProducto) {
     }
 
     guardarCarrito();
+    mostrarToast(`${nombreProducto} agregado al carrito 🛒`);  
     actualizarContadorCarrito();
     renderizarCarrito();
 }
