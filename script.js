@@ -312,8 +312,10 @@ const btnConfirmarModal = document.getElementById('btnConfirmarModal');
 
 const grupoSelectPalomitas = document.getElementById('grupoSelectPalomitas');
 const grupoSelectPastel = document.getElementById('grupoSelectPastel');
+const grupoSelectRefrescos = document.getElementById('grupoSelectRefrescos');
 const selectPalomitasVasos = document.getElementById('selectPalomitasVasos');
 const selectPastelRelleno = document.getElementById('selectPastelRelleno');
+const selectRefrescos = document.getElementById('selectRefrescos');
 
 let productoSeleccionadoActual = '';
 let tipoProductoActual = '';
@@ -329,6 +331,8 @@ function abrirModalOpciones(nombreProducto) {
 
         grupoSelectPalomitas.style.display = 'flex';
         grupoSelectPastel.style.display = 'none';
+        grupoSelectRefrescos.style.display = 'none';
+
 
     } else if (nombreLower.includes('pastel en hoja')) {
         tipoProductoActual = 'pastel';
@@ -337,12 +341,31 @@ function abrirModalOpciones(nombreProducto) {
 
         grupoSelectPalomitas.style.display = 'none';
         grupoSelectPastel.style.display = 'flex';
+        grupoSelectRefrescos.style.display = 'none';
+
+    } else if (nombreLower.includes('refresco')) {
+
+        tipoProductoActual = 'refresco';
+
+        if (tituloModalPalomitas) {
+            tituloModalPalomitas.textContent = "Elige tu refresco";
+        }
+
+        if (descripcionModalTexto) {
+            descripcionModalTexto.textContent = "Selecciona el tipo de refresco que deseas:";
+        }
+
+        grupoSelectPalomitas.style.display = 'none';
+        grupoSelectPastel.style.display = 'none';
+        grupoSelectRefrescos.style.display = 'flex';
     }
+
 
     if (modalVasosOverlay) {
         modalVasosOverlay.classList.add('activo');
     }
 }
+
 
 if (cerrarModalVasosBtn) {
     cerrarModalVasosBtn.addEventListener('click', () => {
@@ -364,9 +387,13 @@ if (btnConfirmarModal) {
 
         if (tipoProductoActual === 'palomitas') {
             selectActivo = selectPalomitasVasos;
+
         } else if (tipoProductoActual === 'pastel') {
             selectActivo = selectPastelRelleno;
-        }
+
+        } else if (tipoProductoActual === 'refresco') {
+          selectActivo = selectRefrescos;
+}
 
         if (!selectActivo) return;
 

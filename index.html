@@ -209,8 +209,7 @@
                     </article>
 
                     <article class="producto-card" data-categoria="dulces">
-                        <img src="images/galeria/dulces/bizcochos.jpeg" alt="Mini cakes Candy Pop"
-                            loading="lazy">
+                        <img src="images/galeria/dulces/bizcochos.jpeg" alt="Mini cakes Candy Pop" loading="lazy">
                         <div class="producto-info">
                             <h3>Mini cakes</h3>
                             <p>Suaves y esponjosos, para cualquier ocasión.</p>
@@ -275,7 +274,8 @@
                     </article>
 
                     <article class="producto-card" data-categoria="dulces">
-                        <img src="images/galeria/dulces/paletas-de-caramelo.jpeg" alt="Paletas de caramelo" loading="lazy">
+                        <img src="images/galeria/dulces/paletas-de-caramelo.jpeg" alt="Paletas de caramelo"
+                            loading="lazy">
                         <div class="producto-info">
                             <h3>Paletas de caramelo</h3>
                             <p>Dulces, duraderas y con un sabor irresistible.</p>
@@ -313,7 +313,8 @@
                     </article>
 
                     <article class="producto-card" data-categoria="salados">
-                        <img src="images/galeria/salados/nachos-con-queso.jpeg" alt="Nachos con queso Candy Pop" loading="lazy">
+                        <img src="images/galeria/salados/nachos-con-queso.jpeg" alt="Nachos con queso Candy Pop"
+                            loading="lazy">
                         <div class="producto-info">
                             <h3>Nachos con queso</h3>
                             <p>Crujientes nachos bañados en queso derretido.</p>
@@ -332,7 +333,8 @@
                             <p>Suave y repleta de queso fundido.</p>
                             <div class="producto-footer">
                                 <span class="precio">RD$350</span>
-                                <button class="btn-agregar" onclick="agregarAlCarrito('Cachapa Venezolana', 350)">+</button>
+                                <button class="btn-agregar"
+                                    onclick="agregarAlCarrito('Cachapa Venezolana', 350)">+</button>
                             </div>
                         </div>
                     </article>
@@ -484,8 +486,8 @@
                             <h3>Refrescos</h3>
                             <p>Variados, bien fríos, para acompañar tu pedido.</p>
                             <div class="producto-footer">
-                                <span class="precio">RD$25</span>
-                                <button class="btn-agregar" onclick="agregarAlCarrito('Refrescos', 25)">+</button>
+                                <span class="precio">Desde RD$25</span>
+                                <button class="btn-agregar" onclick="abrirModalOpciones('Refrescos', 25)">+</button>
                             </div>
                         </div>
                     </article>
@@ -536,6 +538,15 @@
                             <option value="200" data-tamanio="Yuca Pollo">Yuca Pollo - RD$200</option>
                             <option value="200" data-tamanio="Yuca Res">Yuca Res - RD$200</option>
                             <option value="200" data-tamanio="Platano Res">Platano Res - RD$200</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group grupo-select-opcion" id="grupoSelectRefrescos" style="display: none;">
+                        <label for="selectRefrescos">Tipo de refresco</label>
+                        <select id="selectRefrescos" class="form-control-custom modal-vasos-select">
+                            <option value="25" data-tamanio="Refresco"> Refresco - RD$25</option>
+                            <option value="30" data-tamanio="Coca-Cola"> Coca-Cola - RD$30
+                            </option>
                         </select>
                     </div>
 
