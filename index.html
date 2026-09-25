@@ -49,8 +49,9 @@
             </nav>
 
             <div class="header-btn">
-                <a href="#carrito" id="btn-carrito" class="carrito-icon btn-whatsapp">
-                    🛒 <span id="contador-carrito">0</span>
+                <a href="#carrito" id="btn-carrito" class="carrito-icon">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span id="contador-carrito">0</span>
                 </a>
             </div>
 
@@ -880,8 +881,13 @@
     </footer>
 
     <div id="toastCarrito" class="toast">
-        <i class="fa-solid fa-circle-check"></i>
-        <span id="toastMensaje">Producto agregado</span>
+        <div class="toast-contenido">
+            <div>
+                <strong>Tu pedido</strong>
+                <span id="toastResumenCarrito">RD$0</span>
+            </div>
+            <button id="btnIrAlCarrito" type="button">Ver carrito →</button>
+        </div>
     </div>
 
 </body>

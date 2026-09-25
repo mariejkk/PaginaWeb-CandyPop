@@ -377,19 +377,44 @@ button:focus-visible {
 }
 
 .carrito-icon {
+    position: relative;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(244, 195, 1, 0.888);
+    color: var(--color-texto);
+    font-size: 18px;
+    text-decoration: none;
     cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.carrito-icon:hover {
+    background: rgba(241, 179, 24, 0.12);
+    border-color: rgba(241, 179, 24, 0.5);
+    transform: translateY(-1px);
 }
 
 #contador-carrito {
+    position: absolute;
+    top: -4px;
+    right: -4px;
     background-color: var(--color-acento);
     color: var(--color-bg-oscuro-1);
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
-    padding: 2px 6px;
-    border-radius: 50px;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 4px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--color-bg-oscuro-1);
 }
 
 
@@ -956,29 +981,66 @@ fieldset.form-group {
     color: var(--color-whatsapp-icon);
 }
 
-.toast {
+#toastCarrito {
     position: fixed;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%) translateY(20px);
-    background-color: var(--color-acento);
-    color: #1a1207;
-    font-weight: 600;
-    padding: 14px 24px;
-    border-radius: 30px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(18, 18, 18, 0.97);
+    border-top: 1px solid rgba(241, 179, 24, 0.5);
+    padding: 14px 20px;
+    box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+
     opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    z-index: 4000;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
 }
 
-.toast.mostrar {
+#toastCarrito.mostrar {
     opacity: 1;
-    transform: translateX(-50%) translateY(0);
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.toast-contenido {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.toast-contenido strong {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--color-texto);
+}
+
+#toastResumenCarrito {
+    display: block;
+    font-size: 14px;
+    color: var(--color-acento);
+    font-weight: 600;
+}
+
+#btnIrAlCarrito {
+    border: 1px solid rgba(241, 179, 24, 0.6);
+    background: rgba(241, 179, 24, 0.15);
+    color: #f1b318;
+    padding: 9px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    white-space: nowrap;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+#btnIrAlCarrito:hover {
+    background: rgba(241, 179, 24, 0.3);
+    border-color: rgba(241, 179, 24, 0.8);
 }
 
 /*RESPONSIVE DESIGN*/
@@ -992,10 +1054,8 @@ fieldset.form-group {
         margin-left: auto;
     }
 
-    .btn-whatsapp {
-        margin-right: 16px;
-        padding: 10px 18px;
-        font-size: 13px;
+    .carrito-icon {
+        margin-right: 14px;
     }
 
     .nav-menu {
@@ -1055,11 +1115,6 @@ fieldset.form-group {
 
     .btn {
         text-align: center;
-    }
-
-    .btn-whatsapp {
-        padding: 10px 16px;
-        font-size: 13px;
     }
 
     .producto-grid {
