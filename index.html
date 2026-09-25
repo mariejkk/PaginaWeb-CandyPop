@@ -267,8 +267,8 @@
                             <h3>Gomitas</h3>
                             <p>Dulces, suaves y llenas de sabor.</p>
                             <div class="producto-footer">
-                                <span class="precio">RD$125</span>
-                                <button class="btn-agregar" onclick="agregarAlCarrito('Gomitas', 125)">+</button>
+                                <span class="precio">Desde RD$125</span>
+                                <button class="btn-agregar" onclick="abrirModalOpciones('Gomitas', 125)">+</button>
                             </div>
                         </div>
                     </article>
@@ -475,7 +475,7 @@
                             <p>100% naturales, frescos y hechos con frutas de temporada.</p>
                             <div class="producto-footer">
                                 <span class="precio">RD$100</span>
-                                <button class="btn-agregar" onclick="agregarAlCarrito('Jugo Natural', 100)">+</button>
+                                <button class="btn-agregar" onclick="abrirModalOpciones('Jugo Natural', 100)">+</button>
                             </div>
                         </div>
                     </article>
@@ -541,12 +541,30 @@
                         </select>
                     </div>
 
+                    <!-- REFRESCOS -->
                     <div class="form-group grupo-select-opcion" id="grupoSelectRefrescos" style="display: none;">
                         <label for="selectRefrescos">Tipo de refresco</label>
                         <select id="selectRefrescos" class="form-control-custom modal-vasos-select">
-                            <option value="25" data-tamanio="Refresco"> Refresco - RD$25</option>
-                            <option value="30" data-tamanio="Coca-Cola"> Coca-Cola - RD$30
-                            </option>
+                            <option value="25" data-tamanio="Refresco">Refresco - RD$25</option>
+                            <option value="30" data-tamanio="Coca-Cola">Coca-Cola - RD$30</option>
+                        </select>
+                    </div>
+
+                    <!-- JUGOS NATURALES -->
+                    <div class="form-group grupo-select-opcion" id="grupoSelectJugos" style="display: none;">
+                        <label for="selectJugos">Tipo de jugo</label>
+                        <select id="selectJugos" class="form-control-custom modal-vasos-select">
+                            <option value="100" data-tamanio="Jugo de tamarindo">Jugo de tamarindo - RD$100</option>
+                            <option value="100" data-tamanio="Jugo de limón">Jugo de limón - RD$100</option>
+                        </select>
+                    </div>
+
+                    <!-- GOMITAS -->
+                    <div class="form-group grupo-select-opcion" id="grupoSelectGomitas" style="display: none;">
+                        <label for="selectGomitas">Tipo de gomitas</label>
+                        <select id="selectGomitas" class="form-control-custom modal-vasos-select">
+                            <option value="125" data-tamanio="Gomitas">Gomitas - RD$125</option>
+                            <option value="175" data-tamanio="Gomitas enchiladas">Gomitas enchiladas - RD$175</option>
                         </select>
                     </div>
 

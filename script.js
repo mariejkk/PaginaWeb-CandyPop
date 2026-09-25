@@ -114,19 +114,19 @@ function guardarCarrito() {
 }
 
 // Notificación tipo "toast" al agregar un producto                 
-let timeoutToast;                                                   
-function mostrarToast(mensaje) {                                     
-    const toast = document.getElementById('toastCarrito');           
-    if (!toast || !toastMensaje) return;                             
+let timeoutToast;
+function mostrarToast(mensaje) {
+    const toast = document.getElementById('toastCarrito');
+    if (!toast || !toastMensaje) return;
 
-    toastMensaje.textContent = mensaje;                             
-    toast.classList.add('mostrar');                                  
+    toastMensaje.textContent = mensaje;
+    toast.classList.add('mostrar');
 
-    clearTimeout(timeoutToast);                                     
-    timeoutToast = setTimeout(() => {                                
-        toast.classList.remove('mostrar');                          
-    }, 2000);                                                         
-}        
+    clearTimeout(timeoutToast);
+    timeoutToast = setTimeout(() => {
+        toast.classList.remove('mostrar');
+    }, 2000);
+}
 
 if (btnCarrito) {
     btnCarrito.addEventListener('click', (e) => {
@@ -164,7 +164,7 @@ function agregarAlCarrito(nombreProducto, precioProducto) {
     }
 
     guardarCarrito();
-    mostrarToast(`${nombreProducto} agregado al carrito 🛒`);  
+    mostrarToast(`${nombreProducto} agregado al carrito 🛒`);
     actualizarContadorCarrito();
     renderizarCarrito();
 }
@@ -302,7 +302,7 @@ if (formCheckout) {
     });
 }
 
-// CONTROLADOR DE MODAL DINÁMICO (PASTELES EN HOJA Y PALOMITAS)
+// CONTROLADOR DE MODAL DINÁMICO (Mostrando diferentes opciones de un producto)
 
 const modalVasosOverlay = document.getElementById('modalVasosOverlay');
 const cerrarModalVasosBtn = document.getElementById('cerrarModalVasos');
@@ -311,11 +311,15 @@ const descripcionModalTexto = document.getElementById('descripcionModalTexto');
 const btnConfirmarModal = document.getElementById('btnConfirmarModal');
 
 const grupoSelectPalomitas = document.getElementById('grupoSelectPalomitas');
-const grupoSelectPastel = document.getElementById('grupoSelectPastel');
-const grupoSelectRefrescos = document.getElementById('grupoSelectRefrescos');
 const selectPalomitasVasos = document.getElementById('selectPalomitasVasos');
+const grupoSelectPastel = document.getElementById('grupoSelectPastel');
 const selectPastelRelleno = document.getElementById('selectPastelRelleno');
+const grupoSelectRefrescos = document.getElementById('grupoSelectRefrescos');
 const selectRefrescos = document.getElementById('selectRefrescos');
+const grupoSelectJugos = document.getElementById('grupoSelectJugos');
+const selectJugos = document.getElementById('selectJugos');
+const grupoSelectGomitas = document.getElementById('grupoSelectGomitas');
+const selectGomitas = document.getElementById('selectGomitas');
 
 let productoSeleccionadoActual = '';
 let tipoProductoActual = '';
@@ -332,6 +336,7 @@ function abrirModalOpciones(nombreProducto) {
         grupoSelectPalomitas.style.display = 'flex';
         grupoSelectPastel.style.display = 'none';
         grupoSelectRefrescos.style.display = 'none';
+        grupoSelectJugos.style.display = 'none';
 
 
     } else if (nombreLower.includes('pastel en hoja')) {
@@ -342,6 +347,8 @@ function abrirModalOpciones(nombreProducto) {
         grupoSelectPalomitas.style.display = 'none';
         grupoSelectPastel.style.display = 'flex';
         grupoSelectRefrescos.style.display = 'none';
+        grupoSelectJugos.style.display = 'none';
+
 
     } else if (nombreLower.includes('refresco')) {
 
@@ -358,6 +365,44 @@ function abrirModalOpciones(nombreProducto) {
         grupoSelectPalomitas.style.display = 'none';
         grupoSelectPastel.style.display = 'none';
         grupoSelectRefrescos.style.display = 'flex';
+        grupoSelectJugos.style.display = 'none';
+
+
+    } else if (nombreLower.includes('jugo')) {
+
+        tipoProductoActual = 'jugos';
+
+        if (tituloModalPalomitas) {
+            tituloModalPalomitas.textContent = "Elige tu jugo";
+        }
+
+        if (descripcionModalTexto) {
+            descripcionModalTexto.textContent = "Selecciona el sabor que prefieres:";
+        }
+
+        grupoSelectPalomitas.style.display = 'none';
+        grupoSelectPastel.style.display = 'none';
+        grupoSelectRefrescos.style.display = 'none';
+        grupoSelectJugos.style.display = 'flex';
+
+
+    } else if (nombreLower.includes('gomitas')) {
+
+        tipoProductoActual = 'gomitas';
+
+        if (tituloModalPalomitas) {
+            tituloModalPalomitas.textContent = "Elige tus gomitas";
+        }
+
+        if (descripcionModalTexto) {
+            descripcionModalTexto.textContent = "Selecciona el tipo de gomitas que prefieres:";
+        }
+
+        grupoSelectPalomitas.style.display = 'none';
+        grupoSelectPastel.style.display = 'none';
+        grupoSelectRefrescos.style.display = 'none';
+        grupoSelectJugos.style.display = 'none';
+        grupoSelectGomitas.style.display = 'flex';
     }
 
 
@@ -392,8 +437,14 @@ if (btnConfirmarModal) {
             selectActivo = selectPastelRelleno;
 
         } else if (tipoProductoActual === 'refresco') {
-          selectActivo = selectRefrescos;
-}
+            selectActivo = selectRefrescos;
+
+        } else if (tipoProductoActual === 'jugos') {
+            selectActivo = selectJugos;
+
+        } else if (tipoProductoActual === 'gomitas') {
+            selectActivo = selectGomitas;
+        }
 
         if (!selectActivo) return;
 
