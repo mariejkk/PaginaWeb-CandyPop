@@ -790,7 +790,13 @@ fieldset.form-group {
     width: 260px;
     background-color: var(--color-card-bg);
     border-radius: 14px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
     overflow: hidden;
+}
+
+.combo-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
 }
 
 .combo-item img {
@@ -798,8 +804,14 @@ fieldset.form-group {
     width: 100%;
     aspect-ratio: 4 / 5;
     background-color: rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
     object-fit: contain;
 }
+
+.combo-item:hover img {
+    transform: scale(1.05);
+}
+
 
 .combo-info {
     display: flex;

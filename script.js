@@ -140,14 +140,14 @@ if (btnCarrito) {
     btnCarrito.addEventListener('click', (e) => {
         e.preventDefault();
         carritoOverlay.classList.add('activo');
-        ocultarBarraCarrito();         
+        ocultarBarraCarrito();
     });
 }
 
 if (cerrarCarritoBtn) {
     cerrarCarritoBtn.addEventListener('click', () => {
         carritoOverlay.classList.remove('activo');
-        actualizarBarraCarrito();      
+        actualizarBarraCarrito();
     });
 }
 
@@ -157,14 +157,14 @@ if (carritoOverlay) {
     carritoOverlay.addEventListener('click', (e) => {
         if (e.target === carritoOverlay) {
             carritoOverlay.classList.remove('activo');
-            actualizarBarraCarrito();   
+            actualizarBarraCarrito();
         }
     });
 }
 
 if (btnIrAlCarrito) {
     btnIrAlCarrito.addEventListener('click', () => {
-        ocultarBarraCarrito();          
+        ocultarBarraCarrito();
         if (carritoOverlay) {
             carritoOverlay.classList.add('activo');
         }
@@ -186,7 +186,7 @@ function agregarAlCarrito(nombreProducto, precioProducto) {
     }
 
     guardarCarrito();
-   
+
     actualizarContadorCarrito();
     renderizarCarrito();
 
@@ -244,16 +244,38 @@ function renderizarCarrito() {
 
     carritoTotalMonto.textContent = `RD$${totalGeneral}`;
     actualizarBarraCarrito();
+} ''
+
+function mostrarNotificacionEliminado(nombreProducto) {
+    const toast = document.getElementById('toastCarrito');
+    const resumen = document.getElementById('toastResumenCarrito');
+    if (!toast || !resumen) return;
+
+    resumen.textContent = `${nombreProducto} se ha eliminado correctamente 🗑️`;
+    toast.classList.add('mostrar');
+
+    clearTimeout(timeoutBarraCarrito);
+    timeoutBarraCarrito = setTimeout(() => {
+        toast.classList.remove('mostrar');
+    }, 2500);
 }
 
 function cambiarCantidad(index, cambio) {
     carrito[index].cantidad += cambio;
+
+    let productoEliminado = null;
     if (carrito[index].cantidad <= 0) {
+        productoEliminado = carrito[index].nombre;
         carrito.splice(index, 1);
     }
+
     guardarCarrito();
     actualizarContadorCarrito();
     renderizarCarrito();
+
+    if (productoEliminado) {
+        mostrarNotificacionEliminado(productoEliminado);
+    }
 }
 
 // Mostrar/ocultar el campo de dirección según el tipo de entrega
